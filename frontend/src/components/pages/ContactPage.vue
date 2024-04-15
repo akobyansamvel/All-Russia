@@ -9,7 +9,7 @@
                 <p class="contact__text contact__text-underline">E-mail: info@allrussia.info</p>
                 <p class="contact__text">Телефоны: +7 (495) 784-73-55; +7 (926) 393-40-64</p>
             </div>
-          <MapSection/>
+            <MapSection/>
 <!--          <NavigateComponent/>-->
         </div>
     </div>
@@ -32,17 +32,22 @@
 }
 
 .contact{
+    margin-top: 80px;
     border-top: 1px solid #AAAAAA;
 }
 
 .red-line{
     display: block;
-    width: 80px;
+    width: 88px;
     height: 13px;
     background-color: #aa0000;
 }
 
 .contact__headding{
+    font-family: "Roboto Condensed";
+    font-weight: normal;
+    font-size: 24px;
+    margin: 24px 0;
     text-transform: uppercase;
 }
 

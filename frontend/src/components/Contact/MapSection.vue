@@ -1,10 +1,9 @@
 <template>
- <div>
-   <h2 class="maps__title">Мы на карте:</h2>
-   <div class="maps container">
-     <div ref="map" style="width: 1000px; height: 500px"></div>
-   </div>
- </div>
+  <div class="wrapper">
+    <div class="maps container">
+      <div ref="map" style="width: 1000px; height: 500px"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -37,8 +36,6 @@ export default {
 
 <style scoped>
 .maps {
-  display: flex;
-  justify-content: center;
-
+  margin-top: 48px;
 }
 </style>

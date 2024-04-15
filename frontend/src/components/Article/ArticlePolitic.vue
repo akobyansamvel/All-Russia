@@ -1,5 +1,6 @@
 <template>
     <div class="article">
+        <span class="red-line"></span>
         <h2 class="section-title">Политика</h2>
         <h1 class="article-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h1>
         <p class="byline">Александр Новиков | Опубликовано: 21 фев, 2024, 21:08 | Изменено: 21 фев, 2024, 22:31</p>
@@ -31,9 +32,9 @@ export default {
 
 <style>
 .article {
-    font-family: 'Arial', sans-serif;
+    margin-top: 80px;
+    border-top: 1px solid #AAAAAA;
     line-height: 1.6;
-    color: #333;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -43,7 +44,10 @@ export default {
     text-align: left;
 }
 .section-title{
-    font-weight: 100;
+    font-family: "Roboto Condensed";
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 .article-title {
     color: #333;
@@ -74,5 +78,11 @@ export default {
 .author-name {
     font-weight: bold;
     margin-bottom: 10px;
+}
+.red-line {
+    width: 80px;
+    height: 13px;
+    background-color:#aa0000;
+    margin-right: auto;
 }
 </style>

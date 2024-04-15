@@ -2,9 +2,7 @@
     <div>
         <footer class="footer">
           <div class="footer__wrapper wrapper">
-            <h2 class="footer__logo logo">
-              ALLRUSSIA
-            </h2>
+            <h2 class="footer__logo logo">ALLRUSSIA</h2>
             <div class="footer__list list">
               <div class="list__contact contact line-top">
                 <p class=" contact__text line-bottom">Связаться с нами</p>
@@ -73,6 +71,7 @@ a {
   font-size: 64px;
   margin: 0;
   margin-left: 40px;
+  margin-bottom: 36px;
 }
 
 .footer__wrapper{
@@ -81,13 +80,13 @@ a {
 }
 
 .footer__list{
-  display: flex;
+  display: flex; 
   flex-direction: row;
   gap: 26px;
-  margin-top: 36px;
 }
 
 .list__contact{
+  margin-top: 0;
   width: 500px;
 }
 

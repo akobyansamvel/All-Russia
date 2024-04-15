@@ -31,7 +31,7 @@ export default {
 
 <style>
 .article {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto';
     line-height: 1.6;
     color: #333;
     max-width: 600px;
@@ -43,11 +43,14 @@ export default {
     text-align: left;
 }
 .section-title{
-    font-weight: 100;
+    font-family: "Roboto Condensed";
+    font-size: 24px;
+    font-weight: normal;
 }
 .article-title {
-    color: #333;
+    font-family: "Roboto Condensed";
     font-size: 24px;
+    font-weight: normal;
 }
 
 .byline {

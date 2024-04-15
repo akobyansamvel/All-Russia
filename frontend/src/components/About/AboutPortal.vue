@@ -1,13 +1,6 @@
 <template>
-    <div class="main-container">
-  <div class="title">
-     <div class="text" >
-       AllRussia
-     </div>
-    <div class="sub_title">
-      Мы открываем Россию заново! Вместе с вами!
-    </div>
-  </div>
+<div class="main-container">
+  <mainSection />
   <div class="wrapper">
     <div class="main-content">
     <div class="block">
@@ -24,7 +17,7 @@
 
       <div class="block">
         <span class="red-line"></span>
-        <h2 class="block-title">МИССИЯ И ЗАДАЧИ ПОРТАЛА</h2>
+        <h2 class="block-title">УНИКАЛЬНОСТЬ ПРОЕКТА «Вся Россия»</h2>
         <p class="block-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo duis. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sollicitudin nibh sit amet commodo nulla. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Id semper risus in hendrerit gravida rutrum quisque non tellus. Gravida arcu ac tortor dignissim convallis aenean et. Adipiscing diam donec adipiscing tristique risus nec feugiat. Fames ac turpis egestas maecenas pharetra.
           <br>
@@ -35,23 +28,12 @@
 
       <div class="block">
         <span class="red-line"></span>
-        <h2 class="block-title">МИССИЯ И ЗАДАЧИ ПОРТАЛА</h2>
+        <h2 class="block-title">ДЛЯ КОГО НАШ МАТЕРИАЛ</h2>
         <p class="block-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo duis. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sollicitudin nibh sit amet commodo nulla. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Id semper risus in hendrerit gravida rutrum quisque non tellus. Gravida arcu ac tortor dignissim convallis aenean et. Adipiscing diam donec adipiscing tristique risus nec feugiat. Fames ac turpis egestas maecenas pharetra.
           <br>
           <br>
           Enim neque volutpat ac tincidunt vitae semper quis lectus. Consequat ac felis donec et. Vel elit scelerisque mauris pellentesque pulvinar. Ut morbi tincidunt augue interdum velit euismod in. Sit amet dictum sit am
-          Enim neque volutpat ac tincidunt vitae semper quis lectus. Consequat ac felis donec et. Vel elit scelerisque mauris pellentesque pulvinar. Ut morbi tincidunt augue interdum velit euismod in. Sit amet dictum sit amet. Et tortor at risus viverra adipiscing at in. Eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Massa id neque aliquam vestibulum morbi blandit. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Ipsum consequat nisl vel pretium lectus.
-        </p>
-      </div>
-
-      <div class="block">
-        <span class="red-line"></span>
-        <h2 class="block-title">МИССИЯ И ЗАДАЧИ ПОРТАЛА</h2>
-        <p class="block-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo duis. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sollicitudin nibh sit amet commodo nulla. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Id semper risus in hendrerit gravida rutrum quisque non tellus. Gravida arcu ac tortor dignissim convallis aenean et. Adipiscing diam donec adipiscing tristique risus nec feugiat. Fames ac turpis egestas maecenas pharetra.
-          <br>
-          <br>
           Enim neque volutpat ac tincidunt vitae semper quis lectus. Consequat ac felis donec et. Vel elit scelerisque mauris pellentesque pulvinar. Ut morbi tincidunt augue interdum velit euismod in. Sit amet dictum sit amet. Et tortor at risus viverra adipiscing at in. Eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Massa id neque aliquam vestibulum morbi blandit. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Ipsum consequat nisl vel pretium lectus.
         </p>
       </div>
@@ -63,9 +45,10 @@
 </template>
 
 <script>
+import mainSection from '../Main/mainSection.vue';
 export default {
   name: 'AboutPortal',
-
+  components: { mainSection },
 }
 </script>
 
@@ -90,7 +73,7 @@ export default {
 
 }
 .text {
- font-size: 120px;
+  font-size: 120px;
 }
 .sub_title {
   font-size: 36px;
@@ -105,21 +88,27 @@ export default {
 .block {
   display: flex;
   flex-direction: column;
-justify-content: center;
+  justify-content: center;
   max-width:600px;
   align-items: center;
   margin-bottom: 40px;
   border-top: 1px solid #000000;
 }
 .block-title {
+  font-family: "Roboto Condensed";
+  font-size: 24px;
+  font-weight: normal;
   margin-right: auto;
-  margin-bottom: 0px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 .red-line {
   width: 80px;
   height: 13px;
-  background-color:red ;
+  background-color:#aa0000;
   margin-right: auto;
-
+}
+.block-text {
+  margin: 0;
 }
 </style>
