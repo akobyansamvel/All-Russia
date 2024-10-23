@@ -1,46 +1,42 @@
 <script>
+import axios from 'axios';
+
 export default {
-	name: 'mainPolitic'
-}
+  name: 'mainPolitic',
+  data() {
+    return {
+      items: [] // Массив для хранения данных по политике
+    };
+  },
+  mounted() {
+    this.fetchPoliticData();
+  },
+  methods: {
+    async fetchPoliticData() {
+      try {
+        const response = await axios.get('http://localhost:5000/data_news_politics');
+        this.items = response.data; // Присваиваем полученные данные в items
+      } catch (error) {
+        console.error('Ошибка при загрузке данных по политике:', error);
+      }
+    }
+  }
+};
 </script>
 
 <template>
-	<div class="wrapper">
-		<div class="horizontal-line"></div>
-		<div class="red-rectangle"></div>
-		<h3>ПОЛИТИКА</h3>
+  <div class="wrapper">
+    <div class="horizontal-line"></div>
+    <div class="red-rectangle"></div>
+    <h3>ПОЛИТИКА</h3>
 
-		<div class="container">
-			<div class="item item_1">
-				<img src="../../assets/12%20(1).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_2">
-				<img src="../../assets/12%20(2).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_3">
-				<img src="../../assets/12%20(3).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_4">
-				<img src="../../assets/12%20(4).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+      <div v-for="item in items" :key="item.id" class="item">
+        <img :src="`../../assets/${item.url}`" :alt="item.title" />
+        <p>{{ item.subtitle }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>

@@ -1,56 +1,44 @@
 <script>
+import axios from 'axios';
+
 export default {
-	name: 'mainTeach'
-}
+  name: 'mainTeach',
+  data() {
+    return {
+      items: [] // Массив для хранения данных по науке и образованию
+    };
+  },
+  mounted() {
+    this.fetchScienceEducationData();
+  },
+  methods: {
+    async fetchScienceEducationData() {
+      try {
+        const response = await axios.get('http://localhost:5000/data_news_science_education');
+        this.items = response.data; // Присваиваем полученные данные в items
+      } catch (error) {
+        console.error('Ошибка при загрузке данных по науке и образованию:', error);
+      }
+    }
+  }
+};
 </script>
 
 <template>
-	<div class="wrapper">
-		<div class="horizontal-line"></div>
-		<div class="red-rectangle"></div>
-		<h3>НАУКА И ОБРАЗОВАНИЕ</h3>
-		<div class="container">
-			<div class="item item_1">
-				<img class="item_1-img" src="../../assets/syrikaty-2%201.png" alt="" />
-				<h3 class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam sollicitudin
-					tempor. Curabitur vitae nunc sed velit dignissim sodales ut eu sem.
-				</p>
-			</div>
-			<div class="item item_2">
-				<img src="../../assets/prem1%20(2).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_3">
-				<img src="../../assets/prem1%20(3).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_4">
-				<img src="../../assets/prem1%20(4).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
-			</div>
-			<div class="item item_5">
-				<img src="../../assets/prem1%20(1).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
-			</div>
-		</div>
-	</div>
+  <div class="wrapper">
+    <div class="horizontal-line"></div>
+    <div class="red-rectangle"></div>
+    <h3>НАУКА И ОБРАЗОВАНИЕ</h3>
+    <div class="container">
+      <div v-for="item in items" :key="item.id" class="item">
+        <img class="item_1-img" :src="`../../assets/${item.url}`" :alt="item.title" />
+        <h3 class="title">{{ item.title }}</h3>
+        <p>{{ item.subtitle }}</p>
+      </div>
+    </div>
+  </div>
 </template>
+
 
 <style scoped>
 .wrapper {

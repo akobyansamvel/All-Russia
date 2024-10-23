@@ -1,121 +1,75 @@
+<script>
+import axios from 'axios';
+
+export default {
+  name: 'mainPolitic',
+  data() {
+    return {
+      mainItem: null, 
+      containerItems: [], 
+      newsItems: []
+    };
+  },
+  mounted() {
+    this.fetchPoliticData();
+  },
+  methods: {
+    async fetchPoliticData() {
+      try {
+        const response = await axios.get('http://localhost:5000/data_news_politics');
+        const data = response.data;
+        this.mainItem = data[0];
+        this.containerItems = data.slice(1, 5);
+        this.newsItems = data.slice(5);
+      } catch (error) {
+        console.error('Ошибка при загрузке данных по политике:', error);
+      }
+    }
+  }
+};
+</script>
+
 <template>
-	<div class="wrapper">
-		<div class="horizontal-line"></div>
-		<div class="red-rectangle"></div>
-		<h3>ПОЛИТИКА</h3>
-		<div class="wrapper_main">
-			<div class="item item_main_1">
-				<img src="@/assets/main-politic.png" alt="12" />
-			</div>
-			<div class="item item_main_2">
-				<h2 class="main_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Новиков | 4 дня назад</p>
-				<p class="main_subtitle-1">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Volutpat ac tincidunt vitae semper. Felis bibendum ut
-					tristique et egestas quis ipsum suspendisse. Consequat id porta nibh venenatis. Cursus
-					euismod quis viverra nibh cras pulvinar mattis nunc.
-				</p>
-			</div>
-		</div>
+  <div class="wrapper">
+    <div class="horizontal-line"></div>
+    <div class="red-rectangle"></div>
+    <h3>ПОЛИТИКА</h3>
+    
+    <!-- Главный блок -->
+    <div class="wrapper_main" v-if="mainItem">
+      <div class="item item_main_1">
+        <img :src="`@/assets/${mainItem.image}`" alt="main image" />
+      </div>
+      <div class="item item_main_2">
+        <h2 class="main_title">{{ mainItem.title }}</h2>
+        <p class="main_subtitle">{{ mainItem.subtitle }}</p>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="item item_1">
-				<img src="@/assets/politic(3).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Новиков | 2 дня назад</p>
-			</div>
-			<div class="item item_2">
-				<img src="@/assets/politic(2).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="item item_3">
-				<img src="@/assets/politic(1).png" alt="12" />
-				<h2 class="container_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-				<p class="container_subtitle">Александр Смит | Только что</p>
-			</div>
-			<div class="item item_4">
-				<img src="@/assets/politic(4).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="container_subtitle">Александр Новиков | 1 день назад</p>
-			</div>
-		</div>
-		<div class="horizontal-line"></div>
-		<div class="red-rectangle"></div>
-		<h3>ПОЛИТИКА</h3>
+ 
+    <div class="container">
+      <div v-for="(item, index) in containerItems" :key="index" class="item">
+        <img :src="`@/assets/${item.image}`" alt="news image" />
+        <h2 class="container_title">{{ item.title }}</h2>
+        <p class="container_subtitle">{{ item.subtitle }}</p> 
+      </div>
+    </div>
 
-		<div class="news_container">
-			<div class="items item_1">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_2">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_3">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_4">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_5">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_6">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_7">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-		</div>
-	</div>
+    <div class="horizontal-line"></div>
+    <div class="red-rectangle"></div>
+    <h3>ПОЛИТИКА</h3>
+
+  
+    <div class="news_container">
+      <div v-for="(item, index) in newsItems" :key="index" class="items">
+        <img :src="`@/assets/${item.image}`" alt="news image" />
+        <h2 class="container_title">{{ item.title }}</h2>
+        <p class="container_subtitle">{{ item.subtitle }}</p> 
+      </div>
+    </div>
+  </div>
 </template>
+
 
 <script>
 export default {

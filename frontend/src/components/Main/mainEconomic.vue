@@ -1,47 +1,47 @@
 <script>
+import axios from 'axios';
+
 export default {
-	name: 'mainEconomic'
-}
+  name: 'mainEconomic',
+  data() {
+    return {
+      items: []
+    };
+  },
+  mounted() {
+    this.fetchEconomicData();
+  },
+  methods: {
+    async fetchEconomicData() {
+      try {
+        const response = await axios.get('http://localhost:5000/data_news_economics');
+        this.items = response.data; 
+      } catch (error) {
+        console.error('Ошибка при загрузке данных по экономике:', error);
+      }
+    }
+  }
+};
 </script>
 
 <template>
-	<div class="wrapper" style="margin-bottom: 32px">
-		<div class="horizontal-line"></div>
-		<div class="red-rectangle"></div>
-		<h3>ЭКОНОМИКА</h3>
+  <div class="wrapper" style="margin-bottom: 32px">
+    <div class="horizontal-line"></div>
+    <div class="red-rectangle"></div>
+    <h3>ЭКОНОМИКА</h3>
 
-		<div class="container">
-			<div class="item item_1">
-				<div class="asd">
-					<p class="item_1-txt">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam
-						sollicitudin tempor. Curabitur vitae nunc sed velit dignissim sodales ut eu sem.
-					</p>
-				</div>
-				<img src="../../assets/5.png" alt="" />
-			</div>
-			<div class="item item_2">
-				<div class="asd">
-					<p class="item_1-txt">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam
-						sollicitudin tempor. Curabitur vitae nunc sed velit dignissim sodales ut eu sem.
-					</p>
-				</div>
-				<img src="../../assets/6.png" alt="" />
-			</div>
-		</div>
-	</div>
+    <div class="container">
+      <div v-for="item in items" :key="item.id" class="item">
+        <div class="asd">
+          <p class="item_1-txt">{{ item.title }}</p>
+          <p>{{ item.subtitle }}</p>
+        </div>
+        <img :src="`../../assets/${item.url}`" :alt="item.title" />
+      </div>
+    </div>
+  </div>
 </template>
+
 
 <style scoped>
 .container {
