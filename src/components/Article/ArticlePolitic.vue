@@ -146,7 +146,7 @@ export default {
 	font-size: 24px;
 }
 
-@media (min-width: 320px) {
+@media screen and (width < 769px) {
 	.text {
 		font-size: 16px;
 	}

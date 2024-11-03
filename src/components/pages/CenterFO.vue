@@ -253,7 +253,7 @@ p {
 	}
 }
 
-@media (max-width: 320px) {
+@media screen and (width < 769px) {
 	.main {
 		padding: 10px;
 	}
