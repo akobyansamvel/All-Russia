@@ -139,6 +139,7 @@ export default {
 }
 
 .main {
+	flex-direction: column;
 	margin: 0;
 }
 
@@ -249,6 +250,27 @@ p {
 @media screen and (width < 1000px) {
 	.banner__headding {
 		font-size: 45px;
+	}
+}
+
+@media screen and (width < 769px) {
+	.main {
+		padding: 10px;
+	}
+	.container__card {
+		grid-column-gap: 0;
+		grid-row-gap: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+	.item {
+		flex-direction: column;
+	}
+	.card {
+		flex-direction: column;
+	}
+	.card__headding {
+		margin-bottom: 0;
 	}
 }
 </style>

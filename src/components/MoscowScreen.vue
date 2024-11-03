@@ -207,6 +207,9 @@ export default {
 }
 
 @media screen and (max-width: 380px) {
+	.main {
+		padding: 10px;
+	}
 	.headding__text {
 		font-size: 50px;
 	}

@@ -13,50 +13,50 @@
 			Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique et egestas quis ipsum
 			suspendisse.
 		</h3>
-		<p>
+		<p class="text">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 			labore et dolore magna aliqua. Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique
 			et egestas quis ipsum suspendisse. Consequat id porta nibh venenatis. Cursus euismod quis
 			viverra nibh cras pulvinar mattis nunc.
 		</p>
-		<p>
+		<p class="text">
 			Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.
 			Imperdiet dui accumsan sit amet nulla facilisi morbi.
 		</p>
-		<p>
+		<p class="text">
 			Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique et egestas quis ipsum
 			suspendisse. Consequat id porta nibh venenatis. Cursus euismod quis viverra nibh cras pulvinar
 			mattis nunc. Id aliquet lectus proin nibh. Donec massa sapien faucibus et molestie.
 		</p>
 		<h2>Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.</h2>
-		<p>
+		<p class="text">
 			Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique et egestas quis ipsum
 			suspendisse. Consequat id porta nibh venenatis. Cursus euismod quis viverra nibh cras pulvinar
 			mattis nunc. Id aliquet lectus proin nibh. Donec massa sapien faucibus et molestie.
 		</p>
-		<p>
+		<p class="text">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 			labore et dolore magna aliqua. Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique
 			et egestas quis ipsum suspendisse. Consequat id porta nibh venenatis. Cursus euismod quis
 			viverra nibh cras pulvinar mattis nunc.
 		</p>
 		<img src="../../assets/second.png" alt="" class="article-image" />
-		<p>
+		<p class="text">
 			Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.
 			Imperdiet dui accumsan sit amet nulla facilisi morbi.
 		</p>
-		<p>
+		<p class="text">
 			Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique et egestas quis ipsum
 			suspendisse.
 		</p>
-		<p>
+		<p class="text">
 			Imperdiet dui accumsan sit amet nulla facilisi morbi. Tempor commodo ullamcorper a lacus
 			vestibulum sed. Proin fermentum leo vel orci. In mollis nunc sed id semper risus in hendrerit.
 		</p>
-		<p>Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra.</p>
+		<p class="text">Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra.</p>
 		<h3 class="author-title">Об авторе</h3>
 		<p class="author-name">Александр Новиков</p>
-		<p>
+		<p class="text">
 			Imperdiet dui accumsan sit amet nulla facilisi morbi. Tempor commodo ullamcorper a lacus
 			vestibulum sed. Proin fermentum leo vel orci. In mollis nunc sed id semper risus in
 			hendrerit.Sed ullamcorper morbi...
@@ -72,6 +72,7 @@ export default {
 
 <style>
 .article {
+	padding: 10px;
 	font-family: 'Roboto';
 	line-height: 1.6;
 	color: #333;
@@ -133,7 +134,9 @@ export default {
 	margin: 8px 0;
 }
 
-p {
+.text {
+	margin-top: 6px;
+	margin-bottom: 4px;
 	font-family: 'Roboto';
 	font-size: 20px;
 	line-height: normal;
@@ -141,5 +144,22 @@ p {
 .author-title {
 	margin-bottom: 0;
 	font-size: 24px;
+}
+
+@media screen and (width < 769px) {
+	.text {
+		font-size: 16px;
+	}
+	.article-title {
+		font-size: 20px;
+		margin-top: 0;
+	}
+	.section-title {
+		font-size: 20px;
+		margin-top: 5px;
+	}
+	h2 {
+		font-size: 20px;
+	}
 }
 </style>
