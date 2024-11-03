@@ -1,6 +1,8 @@
 <template>
 	<div class="main-container">
-		<mainSection />
+		<div class="main-section">
+			<mainSection />
+		</div>
 		<div class="wrapper">
 			<div class="space-block">
 				<div class="main-content">
@@ -159,5 +161,20 @@ export default {
 	height: 13px;
 	background-color: #aa0000;
 	margin-right: auto;
+}
+
+@media screen and (width < 769px) {
+	.main-section {
+		display: none;
+	}
+	.main-container {
+		padding: 10px;
+	}
+	.navigate {
+		display: none;
+	}
+	.block-text {
+		font-size: 16px;
+	}
 }
 </style>

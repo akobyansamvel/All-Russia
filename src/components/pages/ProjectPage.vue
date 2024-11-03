@@ -145,4 +145,22 @@ export default {
 	margin: 8px 0 0 0;
 	font-size: 16px;
 }
+@media screen and (width < 769px) {
+	.container {
+		padding: 10px;
+	}
+	.wrapper__container {
+		display: flex;
+		flex-direction: column;
+	}
+	.item__title {
+		font-size: 17px;
+	}
+	.item__subtitle {
+		font-size: 17px;
+	}
+	.navigate {
+		display: none;
+	}
+}
 </style>
