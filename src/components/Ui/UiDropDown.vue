@@ -1,21 +1,26 @@
-<script setup>
-import { defineProps } from 'vue'
-
-defineProps({
-	options: Array
-})
+<script>
+export default {
+	props: {
+		options: {
+			type: Array,
+			default: () => []
+		}
+	}
+}
 </script>
 
 <template>
-	<div class="drop-down" v-if="options.length">
-		<div v-for="option in options" :key="option">
-			<p class="drop-down__text">{{ option }}</p>
-		</div>
+	<div class="dropdown">
+		<ul>
+			<li v-for="option in options" :key="option.label">
+				<a :href="option.link" class="dropdown__text pb-1">{{ option.label }}</a>
+			</li>
+		</ul>
 	</div>
 </template>
 
 <style scoped>
-.drop-down {
+.dropdown {
 	display: flex;
 	align-items: center;
 	background-color: #222222;
@@ -27,7 +32,7 @@ defineProps({
 	padding: 8px 18px;
 }
 
-.drop-down__text {
+.dropdown__text {
 	margin: 0;
 	color: white;
 }

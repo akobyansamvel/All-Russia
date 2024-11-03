@@ -22,7 +22,7 @@
 					>
 						<h3>{{ navItem.title }}</h3>
 						<Transition>
-							<UiDropDown :options="navItem.options" v-if="dropDown === navItem.id" />
+							<UiDropDown class="" :options="navItem.options" v-if="dropDown === navItem.id" />
 						</Transition>
 					</div>
 					<div class="vertical__line"></div>
@@ -50,24 +50,50 @@ import { ref } from 'vue'
 const showSideBar = ref(false)
 
 const navMenuItems = [
-	{ id: 1, title: 'ВСЯРОССИЯ', options: ['О ПОРТАЛЕ', 'ПАРТНЕРЫ', 'КОНТАКТЫ', 'ПРОЕКТЫ'] },
+	{
+		id: 1,
+		title: 'ВСЯРОССИЯ',
+		options: [
+			{ label: 'О ПОРТАЛЕ', link: '/about' },
+			{ label: 'ПАРТНЕРЫ', link: '/partner' },
+			{ label: 'КОНТАКТЫ', link: '/contact' },
+			{ label: 'ПРОЕКТЫ', link: '/project' }
+		]
+	},
 	{
 		id: 2,
 		title: 'РФ',
 		options: [
-			'ДАЛЬНЕВОСТОЧНЫЙ',
-			'ПРИВОЛЖСКИЙ',
-			'ЦЕНТРАЛЬНЫЙ',
-			'СЕВЕРО-ЗАПАДНЫЙ',
-			'УРАЛЬСКИЙ',
-			'СИБИРСКИЙ',
-			'СЕВЕРО-КАВКАЗСКИЙ',
-			'ЮЖНЫЙ'
+			{ label: 'ДАЛЬНЕВОСТОЧНЫЙ', link: '/regions/far-east' },
+			{ label: 'ПРИВОЛЖСКИЙ', link: '/regions/volga' },
+			{ label: 'ЦЕНТРАЛЬНЫЙ', link: '/regions/central' },
+			{ label: 'СЕВЕРО-ЗАПАДНЫЙ', link: '/regions/northwest' },
+			{ label: 'УРАЛЬСКИЙ', link: '/regions/ural' },
+			{ label: 'СИБИРСКИЙ', link: '/regions/siberia' },
+			{ label: 'СЕВЕРО-КАВКАЗСКИЙ', link: '/regions/caucasus' },
+			{ label: 'ЮЖНЫЙ', link: '/regions/south' }
 		]
 	},
-	{ id: 3, title: 'СНГ', options: ['ВОСТОЧНАЯ ЕВРОПА', 'СРЕДНЯЯ АЗИЯ'] },
-	{ id: 4, title: 'АРАБСКИЙ МИР', options: ['СЕВЕРНАЯ АФРИКА', 'БЛИЖНИЙ ВОСТОК'] },
-	{ id: 5, title: 'ШКОЛА РУССКОГО ЯЗЫКА РКИ+', options: [] }
+	{
+		id: 3,
+		title: 'СНГ',
+		options: [
+			{ label: 'ВОСТОЧНАЯ ЕВРОПА', link: '/lorem' },
+			{ label: 'СРЕДНЯЯ АЗИЯ', link: '/lorem' }
+		]
+	},
+	{
+		id: 4,
+		title: 'АРАБСКИЙ МИР',
+		options: [
+			{ label: 'СЕВЕРНАЯ АФРИКА', link: '/lorem' },
+			{ label: 'БЛИЖНИЙ ВОСТОК', link: '/lorem' }
+		]
+	},
+	{
+		id: 4,
+		title: 'ШКОЛА РУССКОГО ЯЗЫКА РКИ+'
+	}
 ]
 
 const dropDown = ref(null)

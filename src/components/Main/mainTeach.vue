@@ -1,6 +1,29 @@
 <script>
+import axios from 'axios'
+import { BASE_URL } from '@/Api'
+
 export default {
-	name: 'mainTeach'
+	name: 'mainTeach',
+	data() {
+		return {
+			main_article: [],
+			same_as_article: []
+		}
+	},
+	mounted() {
+		this.fetchMainTeach()
+	},
+	methods: {
+		async fetchMainTeach() {
+			try {
+				const response = await axios.get(`${BASE_URL}/data_main_page`)
+				this.main_article = response.data.main_article
+				this.same_as_article = response.data.same_as_article
+			} catch (e) {
+				console.log(e)
+			}
+		}
+	}
 }
 </script>
 

@@ -4,100 +4,82 @@ export default {
 	name: 'HeaderHelp',
 	data() {
 		return {
-			loading: true,
-			rates: {},
-			filteredRates: {},
-			apiUrl:
-				'https://openexchangerates.org/api/latest.json?app_id=b32cd1fe2c5548c78b31cdd514660010', // замените на свой URL API
-			currenciesOfInterest: ['USD', 'EUR', 'CNY', 'BYN'],
-			difference: Math.random()
+			currencies: [
+				{ name: 'USD', value: null, change: null },
+				{ name: 'EUR', value: null, change: null },
+				{ name: 'CNY', value: null, change: null },
+				{ name: 'BYN', value: null, change: null }
+			],
+			apiUrl: 'https://api.exchangerate-api.com/v4/latest/RUB'
 		}
 	},
 	mounted() {
-		this.fetchData()
+		this.fetchCurrencyRates()
+		setInterval(this.fetchCurrencyRates, 10000)
 	},
 	methods: {
-		fetchData() {
-			axios
-				.get(this.apiUrl, {
-					params: {
-						// base: 'EUR'
-					}
-				})
-				.then((response) => {
-					this.rates = response.data.rates
-					this.filterRates()
-					this.loading = false
-				})
-				.catch((error) => {
-					console.error('Ошибка при получении данных:', error)
-					this.loading = false
-				})
-		},
+		async fetchCurrencyRates() {
+			try {
+				const response = await axios.get(this.apiUrl)
+				const data = response.data
 
-		filterRates() {
-			this.filteredRates = {}
-			for (const currency of this.currenciesOfInterest) {
-				if (Object.prototype.hasOwnProperty.call(this.rates, currency)) {
-					this.filteredRates[currency] = this.rates[currency]
-				}
+				this.updateCurrency('USD', data.rates.USD)
+				this.updateCurrency('EUR', data.rates.EUR)
+				this.updateCurrency('CNY', data.rates.CNY)
+				this.updateCurrency('BYN', data.rates.BYN)
+			} catch (e) {
+				console.log(e)
 			}
+		},
+		updateCurrency(name, newValue) {
+			const currency = this.currencies.find((c) => c.name === name)
+			if (currency) {
+				const previousValue = currency.value
+				currency.value = newValue.toFixed(2)
+				currency.change = previousValue !== null ? newValue - previousValue : 0
+			}
+		}
+	},
+	computed: {
+		formattedCurrencies() {
+			return this.currencies.map((currency) => ({
+				...currency,
+				formattedChange:
+					currency.value !== null
+						? `${currency.change > 0 ? '+' : ''}${currency.change.toFixed(4)}`
+						: ''
+			}))
 		}
 	}
 }
 </script>
 
 <template>
-	<div class="header__help">
-		<ul
-			class="wrapper header__help__container"
-			v-for="(rate, currency) in filteredRates"
-			:key="currency"
-		>
-			<li class="header_item">
-				{{ currency }} {{ rate }}
-				<span class="item_acc"
-					>{{ this.difference.toFixed(2) }}<img src="@/assets/Arrow%201(1).png"
-				/></span>
-			</li>
-		</ul>
+	<div
+		class="currency-container flex bg-[#222222] justify-center items-center gap-10 text-white text-xl font-bold h-[50px]"
+	>
+		<div v-for="currency in formattedCurrencies" :key="currency.name" class="currency mr-2">
+			{{ currency.name }}
+			<span class="value mr-2">{{ currency.value }}</span>
+			<span
+				:class="{ change: true, positive: currency.change >= 0, negative: currency.change < 0 }"
+			>
+				{{ currency.formattedChange }}
+			</span>
+		</div>
 	</div>
 </template>
 
 <style scoped>
-.header__help {
-	display: flex;
-	justify-content: space-between;
-	background-color: #222222;
-}
-.header__help__container {
-	display: flex;
-	align-items: center;
-	padding: 0;
-	margin: 0 auto;
-	list-style: none;
-	height: 50px;
-}
-.header__help__container > li {
+.currency-container {
 	font-family: 'Roboto Condensed';
-	font-weight: bold;
-	font-size: 20px;
-}
-.header_item {
-	font-size: 14px;
-	color: #ffffff;
-}
-.item_dang {
-	padding-left: 8px;
-	color: #ff3f3f;
-}
-.item_acc {
-	padding-left: 8px;
-	color: #4bff68;
 }
 
-img {
-	width: 10px;
-	height: 15px;
+.positive {
+	color: green;
+}
+
+.negative {
+	color: red;
 }
 </style>
