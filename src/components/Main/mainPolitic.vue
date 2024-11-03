@@ -79,4 +79,16 @@ h3 {
 	font-weight: bold;
 	margin-top: 16px;
 }
+
+@media screen and (width < 769px) {
+	.container {
+		display: flex;
+		padding: 10px;
+	}
+	.item_1,
+	.item_2,
+	.item_3 {
+		display: none;
+	}
+}
 </style>

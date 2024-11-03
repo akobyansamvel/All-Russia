@@ -74,4 +74,18 @@ h3 {
 	font-size: 24px;
 	font-weight: normal;
 }
+@media screen and (width < 769px) {
+	.wrapper {
+		margin-bottom: 40px;
+		padding: 10px;
+	}
+	.container {
+		display: flex;
+	}
+	.item_1,
+	.item_2,
+	.item_3 {
+		display: none;
+	}
+}
 </style>
