@@ -12,7 +12,7 @@
 			</div>
 			<div class="wrapper">
 				<div class="menu__container">
-					<div class="header__logo">ALLRUSSIA</div>
+					<div class="header__logo"><router-link to="/">ALLRUSSIA</router-link></div>
 					<div class="vertical__line"></div>
 					<div
 						v-for="navItem in navMenuItems"
@@ -109,16 +109,6 @@ const toggleDropDown = (id) => {
 </script>
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
-	transition: opacity 0.2s ease-in;
-}
-
-.v-enter-from,
-.v-leave-to {
-	opacity: 0;
-}
-
 .header {
 	display: flex;
 	align-items: center;

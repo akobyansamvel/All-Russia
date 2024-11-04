@@ -15,7 +15,7 @@ export default {
 	},
 	mounted() {
 		this.fetchCurrencyRates()
-		setInterval(this.fetchCurrencyRates, 10000)
+		setInterval(this.fetchCurrencyRates, 200000)
 	},
 	methods: {
 		async fetchCurrencyRates() {

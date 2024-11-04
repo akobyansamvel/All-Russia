@@ -1,6 +1,7 @@
 <script setup>
 import { onClickOutside } from '@vueuse/core'
 import { ref, defineEmits } from 'vue'
+import UILogosList from '@/components/Ui/UILogosList.vue'
 
 const emit = defineEmits('onClose')
 
@@ -12,13 +13,13 @@ onClickOutside(target, (event) => emit('onClose', event))
 <template>
 	<div class="container" ref="target">
 		<ul class="sideBar_list-start">
-			<li class="sideBar-name">ALLRUSSIA</li>
-			<li>
+			<li class="sideBar-name text-center">ALLRUSSIA</li>
+			<li class="flex justify-center">
 				<img src="@/assets/loop.svg" alt="" class="sideBar-img" />
 			</li>
 		</ul>
 
-		<ul class="sideBar_list-one">
+		<ul class="sideBar_list-one text-center">
 			<li class="sideBar-item"><a href="/about">ПОСЛЕДНИЕ НОВОСТИ</a></li>
 			<li class="sideBar-item"><a href="/about">ПОЛИТИКА</a></li>
 			<li class="sideBar-item"><a href="/about">ЭКОНОМИКА</a></li>
@@ -28,29 +29,16 @@ onClickOutside(target, (event) => emit('onClose', event))
 			<li class="sideBar-item"><a href="/about">ТУРИЗМ</a></li>
 		</ul>
 		<div class="divider"></div>
-		<ul class="sieBar_list-two">
+		<ul class="sieBar_list-two text-center">
 			<li class="sideBar-item-two"><a href="/partner">ПАРТНЕРЫ</a></li>
 			<li class="sideBar-item-two"><a href="/about">ПРОЕКТЫ</a></li>
 		</ul>
 		<div class="divider"></div>
-		<ul class="sieBar_list-three">
+		<ul class="sieBar_list-three text-center">
 			<li class="sideBar-item-three"><a href="/">ИНФОРМАЦИЯ</a></li>
 			<li class="sideBar-item-three"><a href="/">СВЯЗАТЬСЯ С НАМИ</a></li>
 		</ul>
-		<ul class="sideBar_logos">
-			<li class="sideBar_logos-item">
-				<img src="@/assets/facebook.png" />
-			</li>
-			<li class="sideBar_logos-item">
-				<img src="@/assets/telegram%201.png" />
-			</li>
-			<li class="sideBar_logos-item">
-				<img src="@/assets/youtube-youtube%201.png" />
-			</li>
-			<li class="sideBar_logos-item">
-				<img src="@/assets/livejournal-svgrepo-com%201.png" />
-			</li>
-		</ul>
+		<u-i-logos-list> </u-i-logos-list>
 		<ul class="sideBar_list-four">
 			<li class="sideBar-item-four">ПОРТАЛ «ВСЯ РОССИЯ»</li>
 			<li class="sideBar-item-four">ВСЕ ПРАВА ЗАЩИЩЕНЫ</li>
@@ -61,13 +49,14 @@ onClickOutside(target, (event) => emit('onClose', event))
 <style scoped>
 .container {
 	font-family: 'Roboto Condensed';
-	position: fixed; /* Закрепляем сайдбар */
-	top: 71px; /* Расположение сверху */
+	position: fixed;
+	top: 71px;
 	width: 350px;
-	height: 100%;
+	max-height: calc(100vh - 71px);
 	background-color: #222222;
 	color: #ffffff;
-	z-index: 1000; /* Убедитесь, что сайдбар находится поверх другого контента */
+	z-index: 1000;
+	overflow-y: auto;
 }
 
 .sideBar-name {
@@ -102,7 +91,7 @@ li {
 
 .divider {
 	margin-bottom: 20px;
-	width: 210px;
+	width: 280px;
 	margin-left: 40px;
 	height: 2px; /* Толщина линии */
 	background-color: #ffffff; /* Цвет линии */
