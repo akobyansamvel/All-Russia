@@ -94,4 +94,28 @@ h3 {
 h3 {
 	font-size: 24px;
 }
+@media screen and (width < 769px) {
+	.wrapper {
+		padding: 10px;
+	}
+	.container {
+		flex-direction: column;
+	}
+	.item_1 {
+		flex-direction: column;
+	}
+	.asd {
+		max-width: 100%;
+	}
+	.item_2 {
+		display: none;
+	}
+	.item_1-txt {
+		margin-bottom: 5px;
+		font-size: 16px;
+	}
+	p {
+		font-size: 16px;
+	}
+}
 </style>

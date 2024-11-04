@@ -166,4 +166,29 @@ h3 {
 .item_2-list {
 	width: 345px;
 }
+
+@media screen and (width < 769px) {
+	.wrapper {
+		margin-bottom: 20px;
+		padding: 10px;
+	}
+	.theme__title {
+		font-size: 20px;
+	}
+	img {
+		width: 300px;
+		height: 200px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	.item_1,
+	.item_2,
+	.item_3 {
+		display: none;
+	}
+	p {
+		font-size: 16px;
+	}
+}
 </style>

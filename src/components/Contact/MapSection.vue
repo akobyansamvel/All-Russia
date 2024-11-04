@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="maps container">
-			<div ref="map" style="width: 1000px; height: 500px"></div>
+			<div class="map" ref="map"></div>
 		</div>
 	</div>
 </template>
@@ -34,4 +34,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.map {
+	width: 1000px;
+	height: 500px;
+}
+</style>

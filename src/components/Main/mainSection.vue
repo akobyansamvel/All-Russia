@@ -28,4 +28,9 @@ export default {
 	background-size: cover;
 	background-position: center;
 }
+@media screen and (width < 769px) {
+	.main__section {
+		display: none;
+	}
+}
 </style>

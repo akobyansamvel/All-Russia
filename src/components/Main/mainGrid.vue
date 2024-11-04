@@ -50,7 +50,6 @@ export default {
 				<img
 					class="item_1-img"
 					src="../../assets/comunicacion%20politica%20(1)%201.png"
-					style="height: 400px; width: 600px"
 					alt="123"
 				/>
 			</div>
@@ -186,5 +185,24 @@ export default {
 
 .item_1-list {
 	padding: 0 30px 30px 40px;
+}
+@media screen and (width < 769px) {
+	.container {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	.item_1-one {
+		display: none;
+	}
+	.item_1-img {
+		width: 300px;
+		height: 200px;
+	}
+	.item_3,
+	.item_4,
+	.item_5 {
+		display: none;
+	}
 }
 </style>

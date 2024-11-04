@@ -130,4 +130,26 @@ h3 {
 	margin-top: 16px;
 	margin-bottom: 20px;
 }
+@media screen and (width < 769px) {
+	.wrapper {
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+	.container {
+		display: flex;
+	}
+	.item_2,
+	.item_3,
+	.item_4,
+	.item_5 {
+		display: none;
+	}
+	.title {
+		margin-bottom: 5px;
+		font-size: 16px;
+	}
+	p {
+		font-size: 16px;
+	}
+}
 </style>
