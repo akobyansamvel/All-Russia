@@ -16,6 +16,7 @@
 		"axios": "^1.6.8",
 		"core-js": "^3.8.3",
 		"normalize.css": "^8.0.1",
+		"pinia": "^2.2.7",
 		"save-dev": "^0.0.1-security",
 		"vite": "^5.4.8",
 		"vue": "^3.2.13",

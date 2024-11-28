@@ -14,7 +14,7 @@ export default {
 	methods: {
 		async fetchEconomicData() {
 			try {
-				const response = await axios.get('http://localhost:5000/data_news_economics')
+				const response = await axios.get('https://allrussia.info/api/data_news_economics')
 				this.items = response.data
 			} catch (error) {
 				console.error('Ошибка при загрузке данных по экономике:', error)
