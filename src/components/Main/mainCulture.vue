@@ -1,32 +1,6 @@
 <script>
-import axios from 'axios'
-
 export default {
-	name: 'mainCulture',
-	data() {
-		return {
-			articles: [], // Храним статьи из API
-			loading: true,
-			error: null,
-			apiUrlNews: 'https://allrussia.info/api/data_news_culture_history'
-		}
-	},
-	async mounted() {
-		await this.fetchMainCulture()
-	},
-	methods: {
-		async fetchMainCulture() {
-			try {
-				const response = await axios.get(this.apiUrlNews)
-				this.articles = response.data // Предполагается, что это массив статей
-				this.loading = false
-			} catch (e) {
-				console.error('Error fetching articles:', e)
-				this.error = 'Failed to load data'
-				this.loading = false
-			}
-		}
-	}
+	name: 'mainCulture'
 }
 </script>
 
@@ -36,19 +10,34 @@ export default {
 			<div class="horizontal-line"></div>
 			<div class="red-rectangle"></div>
 			<h3>КУЛЬТУРА И ИСТОРИЯ</h3>
-
-			<!-- Сообщение о загрузке -->
-			<div v-if="loading">Загрузка...</div>
-			<!-- Сообщение об ошибке -->
-			<div v-if="error">{{ error }}</div>
-
-			<!-- Отображение статей -->
-			<div v-if="!loading && !error" class="container">
-				<div v-for="article in articles" :key="article.id" class="item">
-					<img :src="article.url" alt="Article image" />
-					<h3 class="title">{{ article.title }}</h3>
-					<p>{{ article.subtitle }}</p>
-					<p>{{ article.updated }}</p>
+			<div class="container">
+				<div class="item item_1">
+					<img src="../../assets/12%20(1).png" alt="12" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna.
+					</p>
+				</div>
+				<div class="item item_2">
+					<img src="../../assets/12%20(2).png" alt="12" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna.
+					</p>
+				</div>
+				<div class="item item_3">
+					<img src="../../assets/12%20(3).png" alt="12" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna.
+					</p>
+				</div>
+				<div class="item item_4">
+					<img src="../../assets/12%20(4).png" alt="12" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna.
+					</p>
 				</div>
 			</div>
 		</div>
