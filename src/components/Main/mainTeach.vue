@@ -1,26 +1,28 @@
 <script>
 import axios from 'axios'
-import { BASE_URL } from '@/Api'
-
 export default {
 	name: 'mainTeach',
 	data() {
 		return {
-			main_article: [],
-			same_as_article: []
+			articles: [], // Храним все статьи в одном массиве
+			loading: true,
+			error: null,
+			apiUrlNews: 'https://allrussia.info/api/data_news_science_education'
 		}
 	},
-	mounted() {
-		this.fetchMainTeach()
+	async mounted() {
+		await this.fetchMainTeach()
 	},
 	methods: {
 		async fetchMainTeach() {
 			try {
-				const response = await axios.get(`${BASE_URL}/data_main_page`)
-				this.main_article = response.data.main_article
-				this.same_as_article = response.data.same_as_article
+				const response = await axios.get(this.apiUrlNews)
+				this.articles = response.data // Предполагается, что это массив статей
+				this.loading = false
 			} catch (e) {
-				console.log(e)
+				console.error('Error fetching articles:', e)
+				this.error = 'Failed to load data'
+				this.loading = false
 			}
 		}
 	}
@@ -32,44 +34,19 @@ export default {
 		<div class="horizontal-line"></div>
 		<div class="red-rectangle"></div>
 		<h3>НАУКА И ОБРАЗОВАНИЕ</h3>
-		<div class="container">
-			<div class="item item_1">
-				<img class="item_1-img" src="../../assets/syrikaty-2%201.png" alt="" />
-				<h3 class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam sollicitudin
-					tempor. Curabitur vitae nunc sed velit dignissim sodales ut eu sem.
-				</p>
-			</div>
-			<div class="item item_2">
-				<img src="../../assets/prem1%20(2).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_3">
-				<img src="../../assets/prem1%20(3).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_4">
-				<img src="../../assets/prem1%20(4).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
-			</div>
-			<div class="item item_5">
-				<img src="../../assets/prem1%20(1).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
+
+		<!-- Сообщение о загрузке -->
+		<div v-if="loading">Загрузка...</div>
+		<!-- Сообщение об ошибке -->
+		<div v-if="error">{{ error }}</div>
+
+		<!-- Отображение статей -->
+		<div v-if="!loading && !error" class="container">
+			<div v-for="article in articles" :key="article.id" class="item">
+				<img :src="article.url" alt="Article image" />
+				<h3 class="title">{{ article.title }}</h3>
+				<p>{{ article.subtitle }}</p>
+				<p>{{ article.updated }}</p>
 			</div>
 		</div>
 	</div>

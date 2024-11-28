@@ -1,3 +1,41 @@
+<script>
+import axios from 'axios'
+
+export default {
+	name: 'PoliticPage',
+	data() {
+		return {
+			mainContent: null,
+			newsItems: [],
+			apiUrlMain: 'https://allrussia.info/api/main-content', // Replace with your actual API URL for main content
+			apiUrlNews: 'https://allrussia.info/api/data_news_politics' // Replace with your actual API URL for news
+		}
+	},
+	mounted() {
+		this.fetchMainContent()
+		this.fetchNewsItems()
+	},
+	methods: {
+		async fetchMainContent() {
+			try {
+				const response = await axios.get(this.apiUrlMain)
+				this.mainContent = response.data
+			} catch (e) {
+				console.error('Error fetching main content:', e)
+			}
+		},
+		async fetchNewsItems() {
+			try {
+				const response = await axios.get(this.apiUrlNews)
+				this.newsItems = response.data // Assuming the API returns an array of news items
+			} catch (e) {
+				console.error('Error fetching news items:', e)
+			}
+		}
+	}
+}
+</script>
+
 <template>
 	<div class="wrapper">
 		<div class="horizontal-line"></div>
@@ -5,51 +43,20 @@
 		<h3>ПОЛИТИКА</h3>
 		<div class="wrapper_main">
 			<div class="item item_main_1">
-				<img src="@/assets/main-politic.png" alt="12" />
+				<img :src="mainContent?.url" alt="Main content image" />
 			</div>
 			<div class="item item_main_2">
-				<h2 class="main_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Новиков | 4 дня назад</p>
-				<p class="main_subtitle-1">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Volutpat ac tincidunt vitae semper. Felis bibendum ut
-					tristique et egestas quis ipsum suspendisse. Consequat id porta nibh venenatis. Cursus
-					euismod quis viverra nibh cras pulvinar mattis nunc.
-				</p>
+				<h2 class="main_title">{{ mainContent?.title }}</h2>
+				<p class="main_subtitle">{{ mainContent?.updated }}</p>
+				<p class="main_subtitle-1">{{ mainContent?.subtitle }}</p>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class="item item_1">
-				<img src="@/assets/politic(3).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Новиков | 2 дня назад</p>
-			</div>
-			<div class="item item_2">
-				<img src="@/assets/politic(2).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="item item_3">
-				<img src="@/assets/politic(1).png" alt="12" />
-				<h2 class="container_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-				<p class="container_subtitle">Александр Смит | Только что</p>
-			</div>
-			<div class="item item_4">
-				<img src="@/assets/politic(4).png" alt="12" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="container_subtitle">Александр Новиков | 1 день назад</p>
+			<div v-for="item in newsItems" :key="item.id" class="item">
+				<img :src="item.url" alt="News image" />
+				<h2 class="container_title">{{ item.title }}</h2>
+				<p class="container_subtitle">{{ item.updated }}</p>
 			</div>
 		</div>
 		<div class="horizontal-line"></div>
@@ -57,72 +64,14 @@
 		<h3>ПОЛИТИКА</h3>
 
 		<div class="news_container">
-			<div class="items item_1">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_2">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_3">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_4">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_5">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_6">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
-			</div>
-			<div class="items item_7">
-				<img src="@/assets/mainmama.png" alt="mama" />
-				<h2 class="container_title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h2>
-				<p class="main_subtitle">Александр Смит | 43 минуты назад</p>
+			<div v-for="item in newsItems" :key="item.id" class="items">
+				<img :src="item.url" alt="News image" />
+				<h2 class="container_title">{{ item.title }}</h2>
+				<p class="main_subtitle">{{ item.updated }}</p>
 			</div>
 		</div>
 	</div>
 </template>
-
-<script>
-export default {
-	name: 'PoliticPage',
-	components: {}
-}
-</script>
 
 <style scoped>
 .wrapper {
