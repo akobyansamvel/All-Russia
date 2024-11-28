@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import HeaderDefault from './components/layouts/HeaderDefault.vue'
 import FooterDefault from './components/layouts/FooterDefault.vue'
+import HeaderDefault from './components/layouts/HeaderDefault.vue'
 export default {
 	name: 'App',
 	components: {
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-@import '@/styles/main.css';
+@import '@/styles/main.scss';
 
 body {
 	margin: 0;

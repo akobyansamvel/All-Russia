@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Шрифты */
+@font-face {
+	font-family: 'Roboto Condensed';
+	src: url('../assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	src: url('../assets/fonts/Roboto_Condensed/RobotoCondensed-SemiBold.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../assets/fonts/Roboto/Roboto-Bold.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Переменные */
+$blackpure: #000;
+$black: #222222;
+$white: #ffffff;
+$red: #aa0000;
+
+/* Цвета */
+$nav-bg: $black;
+$nav-text: $white;
+
+$header-bg: $black;
+$header-text: $white;
+
+$footer-bg: $black;
+$footer-text: $white;
+
+$page-bg: $white;
+$text-color: $black;
+$accent: $red;
+$title-1: $accent;
+
+$box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+
+/* Размеры экранов */
+$screen-xs: 480px;
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$screen-2xl: 1536px;
+
+/* Медиа-запросы */
+@mixin media-max($size) {
+	@media (max-width: $size) {
+		@content;
+	}
+}
+
+@mixin media-min($size) {
+	@media (min-width: $size) {
+		@content;
+	}
+}
+
+@include media-max($screen-sm) {
+	body {
+		font-size: 14px;
+	}
+}
+
+@include media-min($screen-lg) {
+	body {
+		font-size: 18px;
+	}
+}
+
+/* Темные и светлые темы */
+$dark-theme: (
+	page-bg: $black,
+	text-color: $white,
+	title-1: $white,
+	box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8)
+);
+
+$light-theme: (
+	page-bg: $white,
+	text-color: $black,
+	title-1: $black,
+	box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25),
+	project-card-bg: $black,
+	project-card-text: $black
+);
+
+.dark {
+	@each $key, $value in $dark-theme {
+		--#{$key}: #{$value};
+	}
+}
+
+.light {
+	@each $key, $value in $light-theme {
+		--#{$key}: #{$value};
+	}
+}
+
+/* Общий стиль */
+// body {
+// 	background-color: var(--page-bg);
+// 	color: var(--text-color);
+// 	box-shadow: var(--box-shadow);
+// }
+
+/* Стили текста */
+.container,
+p {
+	font-family: 'Roboto';
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Roboto Condensed';
+	font-weight: bold;
+}

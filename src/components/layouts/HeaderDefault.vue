@@ -12,7 +12,11 @@
 			</div>
 			<div class="wrapper">
 				<div class="menu__container">
-					<div class="header__logo"><router-link to="/">ALLRUSSIA</router-link></div>
+					<div class="header__logo">
+						<router-link to="/">
+							<h1>ALLRUSSIA</h1>
+						</router-link>
+					</div>
 					<div class="vertical__line"></div>
 					<div
 						v-for="navItem in navMenuItems"
@@ -26,7 +30,14 @@
 						</Transition>
 					</div>
 					<div class="vertical__line"></div>
-					<div class="header__items"><img class="img" src="@/assets/yarussski.png" alt="" /></div>
+					<div class="language-select">
+						<!-- <img src="@/assets/icons/globelogo.svg" alt="Language" /> -->
+						<select v-model="selectedLanguage" @change="handleLanguageChange">
+							<option v-for="item in LanguageItems" :key="item.id" :value="item.title">
+								{{ item.title }}
+							</option>
+						</select>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -48,7 +59,11 @@ import UiDropDown from '@/components/Ui/UiDropDown.vue'
 import { ref } from 'vue'
 
 const showSideBar = ref(false)
-
+const selectedLanguage = ref('RUS')
+const LanguageItems = [
+	{ id: 1, title: 'RUS' },
+	{ id: 2, title: 'AR' }
+]
 const navMenuItems = [
 	{
 		id: 1,
@@ -98,17 +113,16 @@ const navMenuItems = [
 
 const dropDown = ref(null)
 
-/** Функция переключения открытия `dropDown` */
 const toggleDropDown = (id) => {
-	if (dropDown.value === id) {
-		dropDown.value = null
-	} else {
-		dropDown.value = id
-	}
+	dropDown.value = dropDown.value === id ? null : id
+}
+
+const handleLanguageChange = () => {
+	console.log(`Selected Language: ${selectedLanguage.value}`)
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
 	display: flex;
 	align-items: center;
@@ -119,7 +133,6 @@ const toggleDropDown = (id) => {
 	height: 70px;
 	position: fixed;
 	width: 100%;
-	z-index: 1000;
 }
 
 .menu__container {
@@ -160,14 +173,12 @@ const toggleDropDown = (id) => {
 }
 
 .header__logo {
-	cursor: default;
-	font-size: 36px;
+	cursor: pointer;
 }
 
 .header__items {
 	cursor: pointer;
 	position: relative;
-	font-size: 24px;
 }
 
 .header__list {
@@ -176,7 +187,6 @@ const toggleDropDown = (id) => {
 	margin: 0 auto;
 	list-style: none;
 	padding: 0;
-	font-size: 16px;
 }
 
 .divider {
@@ -200,5 +210,90 @@ const toggleDropDown = (id) => {
 
 .content {
 	transition: transform 0.3s ease-out;
+}
+.language-select {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.language-select img {
+	width: 24px;
+	height: 24px;
+}
+
+.language-select select {
+	background: #222222;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 5px 10px;
+}
+@media (max-width: 768px) {
+	.header {
+		flex-direction: column;
+		height: auto;
+		padding: 10px;
+
+		.menu__container {
+			width: 100%;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.header__logo {
+			font-size: 18px;
+		}
+
+		.vertical__line {
+			display: none;
+		}
+
+		.menu-icon > span {
+			width: 30px;
+			border: 1.5px solid white;
+		}
+
+		.header__btn {
+			margin: 0;
+		}
+
+		.header__items {
+			font-size: 14px;
+			margin: 10px 0;
+		}
+
+		.language-select {
+			gap: 5px;
+
+			img {
+				width: 20px;
+				height: 20px;
+			}
+
+			select {
+				padding: 5px;
+			}
+		}
+	}
+}
+
+/* Адаптация под планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.header {
+		.menu__container {
+			width: 100%;
+			justify-content: space-between;
+			padding: 0 20px;
+		}
+
+		.header__logo {
+			font-size: 20px;
+		}
+
+		.header__items {
+			font-size: 16px;
+		}
+	}
 }
 </style>
