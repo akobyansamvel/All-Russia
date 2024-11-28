@@ -41,7 +41,7 @@ export default {
 	methods: {
 		async fetchPartners() {
 			try {
-				const response = await axios.get('https://allrussia.info/api/data_news_politics')
+				const response = await axios.get('http://127.0.0.1:5000/data_news_politics')
 				this.partners = response.data
 
 				console.log(response.data)
