@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
 
 const arrPolitic = ref([
 	{
@@ -41,11 +40,33 @@ const arrPolitic = ref([
 		<h3>ПОЛИТИКА</h3>
 
 		<div class="container">
-			<div v-for="item in arrPolitic" :key="item.id" class="item">
-				<RouterLink to="/politic">
-					<img :src="item.img" :alt="item.title" />
-				</RouterLink>
-				<p>{{ item.description }}</p>
+			<div class="item item_1">
+				<img src="../../assets/12%20(1).png" alt="12" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna.
+				</p>
+			</div>
+			<div class="item item_2">
+				<img src="../../assets/12%20(2).png" alt="12" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna.
+				</p>
+			</div>
+			<div class="item item_3">
+				<img src="../../assets/12%20(3).png" alt="12" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna.
+				</p>
+			</div>
+			<div class="item item_4">
+				<img src="../../assets/12%20(4).png" alt="12" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna.
+				</p>
 			</div>
 		</div>
 	</div>

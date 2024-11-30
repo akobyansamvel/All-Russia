@@ -9,7 +9,7 @@
 					<span class="top__line-red line-red"></span>
 					<p class="top__text text-headdind">СТОЛИЦА РОССИЙСКОЙ ФЕДЕРАЦИИ</p>
 					<div class="top__card card">
-						<img class="card__img" src="@/assets/moscow_flag%201.png" alt="" />
+						<img class="card__img" src="@/assets/moscow_flag%201.png" alt="Фотография флага" />
 						<div class="card__box">
 							<p class="card__headding">Москва</p>
 							<p class="card__text text-population">Население: 12 330 126 человек</p>
@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Смоленский</p>
 								<p class="card__text text-population">Население: 934,9 тыс. чел.</p>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="item item_2">
-							<img src="@/assets/tula_flag%201.png" alt="" />
+							<img src="@/assets/tula_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Тульский</p>
 								<p class="card__text text-population">Население: 1449,1 тыс. чел.</p>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="item item_3">
-							<img src="@/assets/tambov_flag%201.png" alt="" />
+							<img src="@/assets/tambov_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Тамбовский</p>
 								<p class="card__text text-population">Население: 994,420 тыс. чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img src="@/assets/lipetsk_flag%201.png" alt="" />
+							<img src="@/assets/lipetsk_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Липецкий</p>
 								<p class="card__text text-population">Население: 1 128,192 тыс. чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img src="@/assets/voronezh_flag%201.png" alt="" />
+							<img src="@/assets/voronezh_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Воронежский</p>
 								<p class="card__text text-population">Население: 2 305,608 тыс. чел</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img src="@/assets/belgorod_flag%201.png" alt="" />
+							<img src="@/assets/belgorod_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Белгородский</p>
 								<p class="card__text text-population">Население: 1 541,259 тыс. чел.</p>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="item item_7">
-							<img src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Брянский</p>
 								<p class="card__text text-population">Население: 1182,682 тыс. чел.</p>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="item item_8">
-							<img src="@/assets/vladimir_flag_337%201.png" alt="" />
+							<img src="@/assets/vladimir_flag_337%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Владимирский</p>
 								<p class="card__text text-population">Население: 1 342,099 тыс. чел.</p>
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="item item_9">
-							<img src="@/assets/ivanon_flag%201.png" alt="" />
+							<img src="@/assets/ivanon_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Ивановский</p>
 								<p class="card__text text-population">Население: 987,032 тыс. чел</p>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="item item_10">
-							<img src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="Фотография флага" />
 							<div class="item__card">
 								<p class="card__headding">Калужский</p>
 								<p class="card__text text-population">Население: 1000,980 тыс. чел</p>

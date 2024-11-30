@@ -7,7 +7,7 @@
 		<p class="byline">
 			Александр Новиков | Опубликовано: 21 фев, 2024, 21:08 | Изменено: 21 фев, 2024, 22:31
 		</p>
-		<img src="" alt="" class="article-image" />
+		<img src="" alt="Фотография статьи" class="article-image" />
 		<h3 class="subtitle">
 			Volutpat ac tincidunt vitae semper. Felis bibendum ut tristique et egestas quis ipsum
 			suspendisse.
@@ -39,7 +39,7 @@
 			et egestas quis ipsum suspendisse. Consequat id porta nibh venenatis. Cursus euismod quis
 			viverra nibh cras pulvinar mattis nunc.
 		</p>
-		<img src="" alt="" class="article-image" />
+		<img src="" alt="Фотография статьи" class="article-image" />
 		<p>
 			Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.
 			Imperdiet dui accumsan sit amet nulla facilisi morbi.

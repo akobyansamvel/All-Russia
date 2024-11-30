@@ -1,5 +1,5 @@
 <script>
-import NavigateBar from '@/components/layouts/NavigateBar.vue'
+import NavigateBar from '@/components/layouts/NavigateBar.vue';
 export default {
 	name: 'ProjectPage',
 	components: {
@@ -17,7 +17,7 @@ export default {
 				<h2 class="wrapper__title">НАШИ ПРОЕКТЫ</h2>
 				<div class="wrapper__container">
 					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
+						<img src="@/assets/1231233(3).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -25,7 +25,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
+						<img src="@/assets/1231233(2).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -33,7 +33,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
+						<img src="@/assets/1231233(4).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -43,7 +43,7 @@ export default {
 				</div>
 				<div class="wrapper__container">
 					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
+						<img src="@/assets/1231233(3).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -51,7 +51,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
+						<img src="@/assets/1231233(2).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -59,7 +59,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
+						<img src="@/assets/1231233(4).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -69,7 +69,7 @@ export default {
 				</div>
 				<div class="wrapper__container">
 					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
+						<img src="@/assets/1231233(3).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -77,7 +77,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
+						<img src="@/assets/1231233(2).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -85,7 +85,7 @@ export default {
 						</p>
 					</div>
 					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
+						<img src="@/assets/1231233(4).png" alt="Фотография статьи" />
 						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
 						<p class="item__subtitle">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

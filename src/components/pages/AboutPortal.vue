@@ -9,6 +9,7 @@
 					<div class="block">
 						<span class="red-line"></span>
 						<h2 class="block-title">МИССИЯ И ЗАДАЧИ ПОРТАЛА</h2>
+						<img src="../../assets/about1.png" alt="Фотография статьи" class="article-image" />
 						<p class="block-text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo
@@ -34,6 +35,7 @@
 					<div class="block">
 						<span class="red-line"></span>
 						<h2 class="block-title">УНИКАЛЬНОСТЬ ПРОЕКТА «Вся Россия»</h2>
+						<img src="../../assets/about2.png" alt="Фотография статьи" class="article-image" />
 						<p class="block-text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo
@@ -58,6 +60,7 @@
 					<div class="block">
 						<span class="red-line"></span>
 						<h2 class="block-title">ДЛЯ КОГО НАШ МАТЕРИАЛ</h2>
+						<img src="../../assets/about3.png" alt="Фотография статьи" class="article-image" />
 						<p class="block-text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et leo
@@ -90,8 +93,8 @@
 </template>
 
 <script>
-import mainSection from '../Main/mainSection.vue'
-import NavigateBar from '@/components/layouts/NavigateBar.vue'
+import NavigateBar from '@/components/layouts/NavigateBar.vue';
+import mainSection from '../Main/mainSection.vue';
 export default {
 	name: 'AboutPortal',
 	components: { mainSection, NavigateBar }
