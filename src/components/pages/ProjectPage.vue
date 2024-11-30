@@ -1,9 +1,35 @@
 <script>
 import NavigateBar from '@/components/layouts/NavigateBar.vue'
+import axios from 'axios'
+
 export default {
 	name: 'ProjectPage',
 	components: {
 		NavigateBar
+	},
+	data() {
+		return {
+			projects: [], // Храним данные проектов из API
+			loading: true,
+			error: null,
+			apiUrlProjects: 'https://allrussia.info/api/data_news_projects'
+		}
+	},
+	async mounted() {
+		await this.fetchProjects()
+	},
+	methods: {
+		async fetchProjects() {
+			try {
+				const response = await axios.get(this.apiUrlProjects)
+				this.projects = response.data // Предполагается, что это массив проектов
+				this.loading = false
+			} catch (e) {
+				console.error('Error fetching projects:', e)
+				this.error = 'Failed to load data'
+				this.loading = false
+			}
+		}
 	}
 }
 </script>
@@ -15,82 +41,19 @@ export default {
 				<div class="list__top top"></div>
 				<div class="red-rectangle"></div>
 				<h2 class="wrapper__title">НАШИ ПРОЕКТЫ</h2>
-				<div class="wrapper__container">
-					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-				</div>
-				<div class="wrapper__container">
-					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-				</div>
-				<div class="wrapper__container">
-					<div class="item item_1">
-						<img src="@/assets/1231233(3).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_2">
-						<img src="@/assets/1231233(2).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
-					</div>
-					<div class="item item_3">
-						<img src="@/assets/1231233(4).png" alt="" />
-						<h3 class="item__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-						<p class="item__subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore.
-						</p>
+
+				<!-- Сообщение о загрузке -->
+				<div v-if="loading">Загрузка...</div>
+				<!-- Сообщение об ошибке -->
+				<div v-if="error">{{ error }}</div>
+
+				<!-- Отображение проектов -->
+				<div v-if="!loading && !error" class="wrapper__container">
+					<div v-for="project in projects" :key="project.id" class="item">
+						<img :src="project.url || '@/assets/placeholder.png'" alt="Project image" />
+						<h3 class="item__title">{{ project.title }}</h3>
+						<p class="item__subtitle" v-html="project.subtitle"></p>
+						<p class="item__date">{{ project.updated }}</p>
 					</div>
 				</div>
 			</div>

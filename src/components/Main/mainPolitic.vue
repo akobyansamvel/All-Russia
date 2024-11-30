@@ -1,6 +1,27 @@
 <script>
+import axios from 'axios'
+
 export default {
-	name: 'mainPolitic'
+	name: 'mainPolitic',
+	data() {
+		return {
+			newsItems: [],
+			apiUrlNews: 'https://allrussia.info/api/data_news_politics' // URL API для новостей политики
+		}
+	},
+	mounted() {
+		this.fetchNewsItems()
+	},
+	methods: {
+		async fetchNewsItems() {
+			try {
+				const response = await axios.get(this.apiUrlNews)
+				this.newsItems = response.data // Предполагается, что API возвращает массив новостей
+			} catch (e) {
+				console.error('Error fetching news items:', e)
+			}
+		}
+	}
 }
 </script>
 
@@ -11,33 +32,9 @@ export default {
 		<h3>ПОЛИТИКА</h3>
 
 		<div class="container">
-			<div class="item item_1">
-				<img src="../../assets/12%20(1).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_2">
-				<img src="../../assets/12%20(2).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_3">
-				<img src="../../assets/12%20(3).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_4">
-				<img src="../../assets/12%20(4).png" alt="12" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
+			<div v-for="item in newsItems" :key="item.id" class="item">
+				<img :src="item.url" alt="News image" />
+				<p>{{ item.title }}</p>
 			</div>
 		</div>
 	</div>

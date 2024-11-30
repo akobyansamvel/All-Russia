@@ -31,13 +31,14 @@
 					</div>
 					<div class="vertical__line"></div>
 					<div class="language-select">
-						<!-- <img src="@/assets/icons/globelogo.svg" alt="Language" /> -->
+						<img src="../../assets/globus.svg" alt="Language" />
 						<select v-model="selectedLanguage" @change="handleLanguageChange">
 							<option v-for="item in LanguageItems" :key="item.id" :value="item.title">
 								{{ item.title }}
 							</option>
 						</select>
 					</div>
+					<ToogleTheme />
 				</div>
 			</div>
 		</div>
@@ -52,6 +53,7 @@
 </template>
 
 <script setup>
+import ToogleTheme from '../Ui/ToogleTheme.vue'
 import HeaderHelp from '@/components/layouts/headerHelp.vue'
 import SideBar from '@/components/layouts/sideBar.vue'
 import UiDropDown from '@/components/Ui/UiDropDown.vue'
@@ -106,7 +108,7 @@ const navMenuItems = [
 		]
 	},
 	{
-		id: 4,
+		id: 5,
 		title: 'ШКОЛА РУССКОГО ЯЗЫКА РКИ+'
 	}
 ]
