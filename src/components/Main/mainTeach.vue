@@ -1,30 +1,22 @@
-<script>
-import axios from 'axios'
+<script setup>
 import { BASE_URL } from '@/Api'
+import axios from 'axios'
+import { onMounted, ref } from 'vue'
 
-export default {
-	name: 'mainTeach',
-	data() {
-		return {
-			main_article: [],
-			same_as_article: []
-		}
-	},
-	mounted() {
-		this.fetchMainTeach()
-	},
-	methods: {
-		async fetchMainTeach() {
-			try {
-				const response = await axios.get(`${BASE_URL}/data_main_page`)
-				this.main_article = response.data.main_article
-				this.same_as_article = response.data.same_as_article
-			} catch (e) {
-				console.log(e)
-			}
-		}
+const mainArticle = ref([])
+const sameAsArticle = ref([])
+
+const fetchMainTeach = async () => {
+	try {
+		const response = await axios.get(`${BASE_URL}/data_main_page`)
+		mainArticle.value = response.data.main_article
+		sameAsArticle.value = response.data.same_as_article
+	} catch (error) {
+		console.error('Ошибка при получении данных:', error)
 	}
 }
+
+onMounted(fetchMainTeach)
 </script>
 
 <template>
@@ -33,43 +25,14 @@ export default {
 		<div class="red-rectangle"></div>
 		<h3>НАУКА И ОБРАЗОВАНИЕ</h3>
 		<div class="container">
-			<div class="item item_1">
-				<img class="item_1-img" src="../../assets/syrikaty-2%201.png" alt="" />
-				<h3 class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam sollicitudin
-					tempor. Curabitur vitae nunc sed velit dignissim sodales ut eu sem.
-				</p>
+			<div v-if="mainArticle.length" class="item item_1">
+				<img class="item_1-img" :src="mainArticle[0]?.img" alt="" />
+				<h3 class="title">{{ mainArticle[0]?.title }}</h3>
+				<p>{{ mainArticle[0]?.description }}</p>
 			</div>
-			<div class="item item_2">
-				<img src="../../assets/prem1%20(2).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_3">
-				<img src="../../assets/prem1%20(3).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna.
-				</p>
-			</div>
-			<div class="item item_4">
-				<img src="../../assets/prem1%20(4).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
-			</div>
-			<div class="item item_5">
-				<img src="../../assets/prem1%20(1).png" alt="" />
-				<p class="title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-				</p>
+			<div v-for="(item, index) in sameAsArticle" :key="index" :class="`item item_${index + 2}`">
+				<img :src="item.img" alt="" />
+				<p class="title">{{ item.title }}</p>
 			</div>
 		</div>
 	</div>
@@ -107,9 +70,9 @@ export default {
 }
 
 .red-rectangle {
-	width: 88px; /* ширина прямоугольника */
-	height: 8px; /* высота прямоугольника */
-	background-color: #aa0000; /* цвет фона прямоугольника */
+	width: 88px;
+	height: 8px;
+	background-color: #aa0000;
 	margin-bottom: 10px;
 }
 
@@ -130,6 +93,7 @@ h3 {
 	margin-top: 16px;
 	margin-bottom: 20px;
 }
+
 @media screen and (width < 769px) {
 	.wrapper {
 		padding: 10px;

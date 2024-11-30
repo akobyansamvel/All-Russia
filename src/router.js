@@ -1,13 +1,13 @@
+import CenterFO from '@/components/pages/CenterFO.vue'
+import PoliticPage from '@/components/pages/PoliticPage.vue'
+import ProjectPage from '@/components/pages/ProjectPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './components/pages/HomePage.vue'
 import ArticlePolitic from './components/Article/ArticlePolitic.vue'
+import MoscowScreen from './components/MoscowScreen.vue'
 import AboutPortal from './components/pages/AboutPortal.vue'
 import Contact from './components/pages/ContactPage.vue'
-import MoscowScreen from './components/MoscowScreen.vue'
+import Home from './components/pages/HomePage.vue'
 import PartnerPage from './components/pages/PartnerPage.vue'
-import CenterFO from '@/components/pages/CenterFO.vue'
-import ProjectPage from '@/components/pages/ProjectPage.vue'
-import PoliticPage from '@/components/pages/PoliticPage.vue'
 
 const router = createRouter({
 	history: createWebHistory(),

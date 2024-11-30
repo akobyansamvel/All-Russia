@@ -1,7 +1,37 @@
-<script>
-export default {
-	name: 'mainCulture'
-}
+<script setup>
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const cultureHistoryItems = ref([
+	{
+		id: 1,
+		title: 'Item 1',
+		img: new URL('@/assets/12%20(1).png', import.meta.url).href,
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	},
+	{
+		id: 2,
+		title: 'Item 2',
+		img: new URL('@/assets/12%20(2).png', import.meta.url).href,
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	},
+	{
+		id: 3,
+		title: 'Item 3',
+		img: new URL('@/assets/12%20(3).png', import.meta.url).href,
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	},
+	{
+		id: 4,
+		title: 'Item 4',
+		img: new URL('@/assets/12%20(4).png', import.meta.url).href,
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	}
+])
 </script>
 
 <template>
@@ -11,33 +41,11 @@ export default {
 			<div class="red-rectangle"></div>
 			<h3>КУЛЬТУРА И ИСТОРИЯ</h3>
 			<div class="container">
-				<div class="item item_1">
-					<img src="../../assets/12%20(1).png" alt="12" />
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
-				</div>
-				<div class="item item_2">
-					<img src="../../assets/12%20(2).png" alt="12" />
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
-				</div>
-				<div class="item item_3">
-					<img src="../../assets/12%20(3).png" alt="12" />
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
-				</div>
-				<div class="item item_4">
-					<img src="../../assets/12%20(4).png" alt="12" />
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna.
-					</p>
+				<div v-for="item in cultureHistoryItems" :key="item.id" class="item">
+					<RouterLink to="/politic">
+						<img :src="item.img" :alt="item.title" />
+					</RouterLink>
+					<p>{{ item.description }}</p>
 				</div>
 			</div>
 		</div>
@@ -64,9 +72,9 @@ export default {
 }
 
 .red-rectangle {
-	width: 88px; /* ширина прямоугольника */
-	height: 8px; /* высота прямоугольника */
-	background-color: #aa0000; /* цвет фона прямоугольника */
+	width: 88px;
+	height: 8px;
+	background-color: #aa0000;
 	margin-bottom: 10px;
 }
 
@@ -74,6 +82,14 @@ h3 {
 	font-size: 24px;
 	font-weight: normal;
 }
+
+.item > p {
+	font-family: 'Roboto Condensed';
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 16px;
+}
+
 @media screen and (width < 769px) {
 	.wrapper {
 		margin-bottom: 40px;
@@ -82,9 +98,7 @@ h3 {
 	.container {
 		display: flex;
 	}
-	.item_1,
-	.item_2,
-	.item_3 {
+	.item:not(:first-child) {
 		display: none;
 	}
 }
