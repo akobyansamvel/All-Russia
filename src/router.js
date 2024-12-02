@@ -9,11 +9,11 @@ import AboutPortal from './components/pages/AboutPortal.vue'
 import Contact from './components/pages/ContactPage.vue'
 import Home from './components/pages/HomePage.vue'
 import PartnerPage from './components/pages/PartnerPage.vue'
-import CaucasusFederalDistrict from './components/pages/CaucasusFederalDistrict.vue'
+import CaucasusFederalDistrict from './components/pages/Caucasus.vue'
 import NorthWest from './components/pages/NorthWest.vue'
-import SiberianFederalDistrict from './components/pages/SiberianFederalDistrict.vue'
-import SouthernFederalDistrict from './components/pages/SouthernFederalDistrict.vue'
-import VolgaFederalDistrict from './components/pages/VolgaFederalDistrict.vue'
+import SiberianFederalDistrict from './components/pages/Siberis.vue'
+import SouthernFederalDistrict from './components/pages/South.vue'
+import VolgaFederalDistrict from './components/pages/Volga.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
