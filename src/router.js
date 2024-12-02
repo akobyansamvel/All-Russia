@@ -1,13 +1,19 @@
+import CenterFO from '@/components/pages/CenterFO.vue'
+import FarEast from '@/components/pages/FarEast.vue'
+import PoliticPage from '@/components/pages/PoliticPage.vue'
+import ProjectPage from '@/components/pages/ProjectPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './components/pages/HomePage.vue'
 import ArticlePolitic from './components/Article/ArticlePolitic.vue'
+import MoscowScreen from './components/MoscowScreen.vue'
 import AboutPortal from './components/pages/AboutPortal.vue'
 import Contact from './components/pages/ContactPage.vue'
-import MoscowScreen from './components/MoscowScreen.vue'
+import Home from './components/pages/HomePage.vue'
 import PartnerPage from './components/pages/PartnerPage.vue'
-import CenterFO from '@/components/pages/CenterFO.vue'
-import ProjectPage from '@/components/pages/ProjectPage.vue'
-import PoliticPage from '@/components/pages/PoliticPage.vue'
+import CaucasusFederalDistrict from './components/pages/CaucasusFederalDistrict.vue'
+import NorthWest from './components/pages/NorthWest.vue'
+import SiberianFederalDistrict from './components/pages/SiberianFederalDistrict.vue'
+import SouthernFederalDistrict from './components/pages/SouthernFederalDistrict.vue'
+import VolgaFederalDistrict from './components/pages/VolgaFederalDistrict.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -58,6 +64,41 @@ const router = createRouter({
 			path: '/politic',
 			name: 'PoliticPage',
 			component: PoliticPage
+		},
+		{
+			path: '/far-east',
+			name: 'FarEast',
+			component: FarEast
+		},
+		{
+			path: '/Caucasus',
+			name: 'CaucasusFederalDistrict',
+			component: CaucasusFederalDistrict
+		},
+		{
+			path: '/NorthWest',
+			name: 'NorthWest',
+			component: NorthWest
+		},
+		{
+			path: '/Siberis',
+			name: 'SiberianFederalDistrict',
+			component: SiberianFederalDistrict
+		},
+		{
+			path: '/South',
+			name: 'SouthernFederalDistrict',
+			component: SouthernFederalDistrict
+		},
+		{
+			path: '/Ural',
+			name: 'UralFederalDistrict',
+			component: UralFederalDistrict
+		},
+		{
+			path: '/Volga',
+			name: 'VolgaFederalDistrict',
+			component: VolgaFederalDistrict
 		}
 	]
 })
