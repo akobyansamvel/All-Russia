@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/dagestan.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Дагестан</p>
 								<p class="card__text text-population">Население: 3 232 224 чел.</p>
@@ -34,14 +34,14 @@
 						<div class="item item_2">
 							<img src="@/assets/tula_flag%201.png" alt="" />
 							<div class="item__card">
-								<p class="card__headding">Ингушетия</p>
+								<p class="card__headding">ingushetia</p>
 								<p class="card__text text-population">Население: 3123 тыс. чел.</p>
 								<p class="card__text text-square">Площадь: 527 тыс. кв. км</p>
 								<p class="card__text text-time">Часовой пояс: MSK (UTC+3)</p>
 							</div>
 						</div>
 						<div class="item item_3">
-							<img src="@/assets/tambov_flag%201.png" alt="" />
+							<img src="@/assets/kabrdino.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Кабардино-Балкария</p>
 								<p class="card__text text-population">Население: 905 тыс. чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img src="@/assets/lipetsk_flag%201.png" alt="" />
+							<img src="@/assets/karach.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Карачаево-Черкессия</p>
 								<p class="card__text text-population">Население: 468 тыс. чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img src="@/assets/voronezh_flag%201.png" alt="" />
+							<img src="@/assets/osetia.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Северная Осетия</p>
 								<p class="card__text text-population">Население: 679 тыс. чел</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img src="@/assets/belgorod_flag%201.png" alt="" />
+							<img src="@/assets/chechnya.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Чечня</p>
 								<p class="card__text text-population">Население: 1 552 866 чел.</p>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="item item_7">
-							<img src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/stavropol.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ставрополь</p>
 								<p class="card__text text-population">Население: 2 886 108 чел.</p>
