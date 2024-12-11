@@ -43,7 +43,9 @@ export default {
 		<h3>ПОЛИТИКА</h3>
 		<div class="wrapper_main">
 			<div class="item item_main_1">
+
 				<img :src="mainContent?.url" alt="Main content image" />
+
 			</div>
 			<div class="item item_main_2">
 				<h2 class="main_title">{{ mainContent?.title }}</h2>
@@ -53,21 +55,25 @@ export default {
 		</div>
 
 		<div class="container">
+
 			<div v-for="item in newsItems" :key="item.id" class="item">
 				<img :src="item.url" alt="News image" />
 				<h2 class="container_title">{{ item.title }}</h2>
 				<p class="container_subtitle">{{ item.updated }}</p>
+
 			</div>
 		</div>
 		<div class="horizontal-line"></div>
 		<div class="red-rectangle"></div>
-		<h3>ПОЛИТИКА</h3>
+		<h3>ПОСЛЕДНИЕ НОВОСТИ</h3>
 
 		<div class="news_container">
+
 			<div v-for="item in newsItems" :key="item.id" class="items">
 				<img :src="item.url" alt="News image" />
 				<h2 class="container_title">{{ item.title }}</h2>
 				<p class="main_subtitle">{{ item.updated }}</p>
+
 			</div>
 		</div>
 	</div>
@@ -94,12 +100,13 @@ export default {
 
 .news_container {
 	display: grid;
-	grid-template-columns: 953px;
-	grid-template-rows: repeat(7, 280px);
+	grid-template-columns: 1000px;
+	grid-template-rows: repeat(7, 400px);
+	margin-top: 10px;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 40px;
 	font-weight: normal;
 	margin-top: 16px;
 	margin-bottom: 24px;
@@ -110,20 +117,21 @@ h3 {
 	opacity: 0.4;
 	width: 100%;
 	background-color: #000;
-	margin: 0 auto;
+	margin: 50px;
 }
 
 .red-rectangle {
 	width: 88px; /* ширина прямоугольника */
 	height: 8px; /* высота прямоугольника */
 	background-color: #aa0000; /* цвет фона прямоугольника */
-	margin-bottom: 10px;
+	margin: 0px;
+	margin-top: -50px;
 }
 .main_title {
 	font-family: 'Roboto Condensed';
 	font-weight: bold;
-	font-size: 40px;
-	margin: 0 0 8px 0;
+	font-size: 30px;
+	margin: 0 0 2px 0;
 }
 .main_subtitle {
 	font-family: 'Roboto', sans-serif;
@@ -146,4 +154,38 @@ h3 {
 .container_subtitle {
 	font-size: 14px;
 }
+
+.items {
+	display: flex;
+	gap: 20px; /* Отступ между изображением и текстовым блоком */
+	margin-bottom: 20px; /* Отступ между элементами */
+	align-items: flex-start; /* Выравнивание содержимого по верхнему краю */
+}
+
+.item-content {
+	display: block; /* Убираем flex для размещения элементов друг под другом */
+}
+
+.main_title {
+	font-size: 30px;
+	color: #333;
+	margin: 0 0 10px 0; /* Отступ снизу */
+	line-height: 1.4;
+	font-weight: bold;
+}
+
+.main_subtitle {
+	font-size: 14px;
+	color: #777;
+	margin: 0 0 10px 0; /* Отступ снизу */
+}
+
+.container_title {
+	font-size: 16px;
+	color: #555;
+	margin: 0;
+	line-height: 1.5;
+}
+
+
 </style>

@@ -1,5 +1,7 @@
 import CenterFO from '@/components/pages/CenterFO.vue'
+
 import FarEast from '@/components/pages/FarEast.vue'
+
 import PoliticPage from '@/components/pages/PoliticPage.vue'
 import ProjectPage from '@/components/pages/ProjectPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -9,12 +11,14 @@ import AboutPortal from './components/pages/AboutPortal.vue'
 import Contact from './components/pages/ContactPage.vue'
 import Home from './components/pages/HomePage.vue'
 import PartnerPage from './components/pages/PartnerPage.vue'
+
 import CaucasusFederalDistrict from './components/pages/Caucasus.vue'
 import NorthWest from './components/pages/NorthWest.vue'
 import SiberianFederalDistrict from './components/pages/Siberis.vue'
 import SouthernFederalDistrict from './components/pages/South.vue'
 import VolgaFederalDistrict from './components/pages/Volga.vue'
 import UralFederalDistrict from './components/pages/Ural.vue'
+
 
 const router = createRouter({
 	history: createWebHistory(),

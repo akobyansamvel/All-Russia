@@ -1,6 +1,8 @@
 <script>
+
 import NavigateBar from '@/components/layouts/NavigateBar.vue'
 import axios from 'axios'
+
 
 export default {
 	name: 'ProjectPage',
@@ -42,6 +44,7 @@ export default {
 				<div class="red-rectangle"></div>
 				<h2 class="wrapper__title">НАШИ ПРОЕКТЫ</h2>
 
+
 				<!-- Сообщение о загрузке -->
 				<div v-if="loading">Загрузка...</div>
 				<!-- Сообщение об ошибке -->
@@ -54,6 +57,7 @@ export default {
 						<h3 class="item__title">{{ project.title }}</h3>
 						<p class="item__subtitle" v-html="project.subtitle"></p>
 						<p class="item__date">{{ project.updated }}</p>
+
 					</div>
 				</div>
 			</div>

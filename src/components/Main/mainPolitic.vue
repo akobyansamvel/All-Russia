@@ -1,3 +1,4 @@
+
 <script>
 import axios from 'axios'
 
@@ -23,6 +24,7 @@ export default {
 		}
 	}
 }
+
 </script>
 
 <template>
@@ -64,9 +66,9 @@ h3 {
 }
 
 .red-rectangle {
-	width: 88px; /* ширина прямоугольника */
-	height: 8px; /* высота прямоугольника */
-	background-color: #aa0000; /* цвет фона прямоугольника */
+	width: 88px;
+	height: 8px;
+	background-color: #aa0000;
 	margin-bottom: 10px;
 }
 
@@ -82,9 +84,7 @@ h3 {
 		display: flex;
 		padding: 10px;
 	}
-	.item_1,
-	.item_2,
-	.item_3 {
+	.item:not(:first-child) {
 		display: none;
 	}
 }

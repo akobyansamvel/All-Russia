@@ -1,3 +1,4 @@
+
 <script>
 import axios from 'axios'
 export default {
@@ -25,8 +26,11 @@ export default {
 				this.loading = false
 			}
 		}
+
 	}
 }
+
+onMounted(fetchMainTeach)
 </script>
 
 <template>
@@ -34,6 +38,7 @@ export default {
 		<div class="horizontal-line"></div>
 		<div class="red-rectangle"></div>
 		<h3>НАУКА И ОБРАЗОВАНИЕ</h3>
+
 
 		<!-- Сообщение о загрузке -->
 		<div v-if="loading">Загрузка...</div>
@@ -47,6 +52,7 @@ export default {
 				<h3 class="title">{{ article.title }}</h3>
 				<p>{{ article.subtitle }}</p>
 				<p>{{ article.updated }}</p>
+
 			</div>
 		</div>
 	</div>
@@ -84,9 +90,9 @@ export default {
 }
 
 .red-rectangle {
-	width: 88px; /* ширина прямоугольника */
-	height: 8px; /* высота прямоугольника */
-	background-color: #aa0000; /* цвет фона прямоугольника */
+	width: 88px;
+	height: 8px;
+	background-color: #aa0000;
 	margin-bottom: 10px;
 }
 
@@ -107,6 +113,7 @@ h3 {
 	margin-top: 16px;
 	margin-bottom: 20px;
 }
+
 @media screen and (width < 769px) {
 	.wrapper {
 		padding: 10px;

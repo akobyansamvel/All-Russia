@@ -17,6 +17,7 @@ export default {
 	methods: {
 		async fetchData() {
 			try {
+
 				const mainResponse = await axios.get('https://allrussia.info/api/data_main_page')
 				this.mainArticle = mainResponse.data.main_article[0]
 				this.similarArticles = mainResponse.data.same_as_main.slice(0, 3)
@@ -25,6 +26,7 @@ export default {
 				this.economics = economicsResponse.data
 
 				const politicsResponse = await axios.get('https://allrussia.info/api/data_news_politics')
+
 				this.politics = politicsResponse.data
 			} catch (error) {
 				console.error('Error fetching data:', error)
@@ -61,7 +63,9 @@ export default {
 				<h3 class="news-block__title">Экономика</h3>
 				<div class="news-block__items">
 					<div v-for="item in economics" :key="item.id" class="news-item">
+
 						<!-- <img :src="../../assets/${item.url}" :alt="item.title" class="news-item__image" /> -->
+
 						<p class="news-item__title">{{ item.title }}</p>
 						<p class="news-item__subtitle">{{ item.subtitle }}</p>
 					</div>
@@ -73,7 +77,9 @@ export default {
 				<h3 class="news-block__title">Политика</h3>
 				<div class="news-block__items">
 					<div v-for="item in politics" :key="item.id" class="news-item">
+
 						<!-- <img :src="../../assets/${item.url}" :alt="item.title" class="news-item__image" /> -->
+
 						<p class="news-item__title">{{ item.title }}</p>
 						<p class="news-item__subtitle">{{ item.subtitle }}</p>
 					</div>

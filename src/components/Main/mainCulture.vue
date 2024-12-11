@@ -1,3 +1,4 @@
+
 <script>
 import axios from 'axios'
 
@@ -28,6 +29,7 @@ export default {
 		}
 	}
 }
+
 </script>
 
 <template>
@@ -36,6 +38,7 @@ export default {
 			<div class="horizontal-line"></div>
 			<div class="red-rectangle"></div>
 			<h3>КУЛЬТУРА И ИСТОРИЯ</h3>
+
 
 			<!-- Сообщение о загрузке -->
 			<div v-if="loading">Загрузка...</div>
@@ -49,6 +52,7 @@ export default {
 					<h3 class="title">{{ article.title }}</h3>
 					<p>{{ article.subtitle }}</p>
 					<p>{{ article.updated }}</p>
+
 				</div>
 			</div>
 		</div>
@@ -75,9 +79,9 @@ export default {
 }
 
 .red-rectangle {
-	width: 88px; /* ширина прямоугольника */
-	height: 8px; /* высота прямоугольника */
-	background-color: #aa0000; /* цвет фона прямоугольника */
+	width: 88px;
+	height: 8px;
+	background-color: #aa0000;
 	margin-bottom: 10px;
 }
 
@@ -85,6 +89,14 @@ h3 {
 	font-size: 24px;
 	font-weight: normal;
 }
+
+.item > p {
+	font-family: 'Roboto Condensed';
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 16px;
+}
+
 @media screen and (width < 769px) {
 	.wrapper {
 		margin-bottom: 40px;
@@ -93,9 +105,7 @@ h3 {
 	.container {
 		display: flex;
 	}
-	.item_1,
-	.item_2,
-	.item_3 {
+	.item:not(:first-child) {
 		display: none;
 	}
 }

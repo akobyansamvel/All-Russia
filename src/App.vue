@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style>
-@import '@/styles/main.scss';
-
 body {
 	margin: 0;
 }
