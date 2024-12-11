@@ -14,6 +14,7 @@ import NorthWest from './components/pages/NorthWest.vue'
 import SiberianFederalDistrict from './components/pages/Siberis.vue'
 import SouthernFederalDistrict from './components/pages/South.vue'
 import VolgaFederalDistrict from './components/pages/Volga.vue'
+import UralFederalDistrict from './components/pages/Ural.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -66,7 +67,7 @@ const router = createRouter({
 			component: PoliticPage
 		},
 		{
-			path: '/far-east',
+			path: '/Far-east',
 			name: 'FarEast',
 			component: FarEast
 		},
@@ -81,7 +82,7 @@ const router = createRouter({
 			component: NorthWest
 		},
 		{
-			path: '/Siberis',
+			path: '/Siberia',
 			name: 'SiberianFederalDistrict',
 			component: SiberianFederalDistrict
 		},

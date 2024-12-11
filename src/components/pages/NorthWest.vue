@@ -9,7 +9,7 @@
 					<span class="top__line-red line-red"></span>
 					<p class="top__text text-headdind">САНКТ-ПЕТЕРБУРГ</p>
 					<div class="top__card card">
-						<img class="card__img" src="@/assets/spb_flag.png" alt="" />
+						<img class="card__img" src="../../assets/spb_flag.png" alt="" />
 						<div class="card__box">
 							<p class="card__headding">Санкт-Петербург</p>
 							<p class="card__text text-population">Население: 5 384 342 человек</p>
@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img src="@/assets/arkhangelsk_flag.png" alt="" />
+							<img src="../../assets/arkhangelsk_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Архангельская область</p>
 								<p class="card__text text-population">Население: 1 116 091 чел.</p>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="item item_2">
-							<img src="@/assets/kaliningrad_flag.png" alt="" />
+							<img src="../../assets/kaliningrad_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Калининградская область</p>
 								<p class="card__text text-population">Население: 1 008 403 чел.</p>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="item item_3">
-							<img src="@/assets/karelia_flag.png" alt="" />
+							<img src="../../assets/karelia_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Республика Карелия</p>
 								<p class="card__text text-population">Население: 579 183 чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img src="@/assets/murmansk_flag.png" alt="" />
+							<img src="../../assets/murmansk_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Мурманская область</p>
 								<p class="card__text text-population">Население: 716 970 чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img src="@/assets/novgorod_flag.png" alt="" />
+							<img src="../../assets/novgorod_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Новгородская область</p>
 								<p class="card__text text-population">Население: 602 134 чел.</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img src="@/assets/pskov_flag.png" alt="" />
+							<img src="../../assets/pskov_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Псковская область</p>
 								<p class="card__text text-population">Население: 625 572 чел.</p>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="item item_7">
-							<img src="@/assets/vologda_flag.png" alt="" />
+							<img src="../../assets/vologda_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Вологодская область</p>
 								<p class="card__text text-population">Население: 1 154 987 чел.</p>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="item item_8">
-							<img src="@/assets/leningrad_flag.png" alt="" />
+							<img src="../../assets/leningrad_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ленинградская область</p>
 								<p class="card__text text-population">Население: 1 921 319 чел.</p>
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="item item_9">
-							<img src="@/assets/komi_flag.png" alt="" />
+							<img src="../../assets/komi_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Республика Коми</p>
 								<p class="card__text text-population">Население: 806 809 чел.</p>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="item item_10">
-							<img src="@/assets/nw_flag.png" alt="" />
+							<img src="../../assets/nw_flag.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ненецкий автономный округ</p>
 								<p class="card__text text-population">Население: 43 997 чел.</p>

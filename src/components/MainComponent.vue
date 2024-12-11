@@ -61,11 +61,7 @@ export default {
 				<h3 class="news-block__title">Экономика</h3>
 				<div class="news-block__items">
 					<div v-for="item in economics" :key="item.id" class="news-item">
-						<img
-							:src="`https://example.com${item.url}`"
-							:alt="item.title"
-							class="news-item__image"
-						/>
+						<!-- <img :src="../../assets/${item.url}" :alt="item.title" class="news-item__image" /> -->
 						<p class="news-item__title">{{ item.title }}</p>
 						<p class="news-item__subtitle">{{ item.subtitle }}</p>
 					</div>
@@ -77,7 +73,7 @@ export default {
 				<h3 class="news-block__title">Политика</h3>
 				<div class="news-block__items">
 					<div v-for="item in politics" :key="item.id" class="news-item">
-						<img :src="../../assets/${item.url}" :alt="item.title" class="news-item__image" />
+						<!-- <img :src="../../assets/${item.url}" :alt="item.title" class="news-item__image" /> -->
 						<p class="news-item__title">{{ item.title }}</p>
 						<p class="news-item__subtitle">{{ item.subtitle }}</p>
 					</div>

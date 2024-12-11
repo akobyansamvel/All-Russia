@@ -19,6 +19,9 @@ export default {
 			} catch (error) {
 				console.error('Ошибка при загрузке данных по экономике:', error)
 			}
+		},
+		getImageUrl(url) {
+			return url || 'default-image-path.jpg' // Укажите путь по умолчанию
 		}
 	}
 }

@@ -81,14 +81,14 @@ const navMenuItems = [
 		id: 2,
 		title: 'РФ',
 		options: [
-			{ label: 'ДАЛЬНЕВОСТОЧНЫЙ', link: '/regions/far-east' },
-			{ label: 'ПРИВОЛЖСКИЙ', link: '/regions/volga' },
-			{ label: 'ЦЕНТРАЛЬНЫЙ', link: '/regions/central' },
-			{ label: 'СЕВЕРО-ЗАПАДНЫЙ', link: '/regions/northwest' },
-			{ label: 'УРАЛЬСКИЙ', link: '/regions/ural' },
-			{ label: 'СИБИРСКИЙ', link: '/regions/siberia' },
-			{ label: 'СЕВЕРО-КАВКАЗСКИЙ', link: '/regions/caucasus' },
-			{ label: 'ЮЖНЫЙ', link: '/regions/south' }
+			{ label: 'ДАЛЬНЕВОСТОЧНЫЙ', link: '/Far-east' },
+			{ label: 'ПРИВОЛЖСКИЙ', link: '/Volga' },
+			{ label: 'ЦЕНТРАЛЬНЫЙ', link: '/CenterFO' },
+			{ label: 'СЕВЕРО-ЗАПАДНЫЙ', link: '/NorthWest' },
+			{ label: 'УРАЛЬСКИЙ', link: '/Ural' },
+			{ label: 'СИБИРСКИЙ', link: '/Siberia' },
+			{ label: 'СЕВЕРО-КАВКАЗСКИЙ', link: '/Caucasus' },
+			{ label: 'ЮЖНЫЙ', link: '/South' }
 		]
 	},
 	{
