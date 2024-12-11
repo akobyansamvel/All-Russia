@@ -1,35 +1,6 @@
-<script>
-import axios from 'axios'
-
-export default {
-	name: 'mainGrid',
-	data() {
-		return {
-			same_as_article: [],
-			main_article: {},
-			n: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
-		}
-	},
-	mounted() {
-		this.fetchMainArticle()
-	},
-	methods: {
-		async fetchMainArticle() {
-			try {
-				const response = await axios.get('http://127.0.0.1:5000/data_main_page')
-				this.main_article = response.data.main_article[0]
-				this.same_as_article = response.data.same_as_main.slice(0, 3)
-				console.log(this.same_as_article)
-			} catch (error) {
-				console.error('Error fetching main article:', error)
-			}
-		}
-	}
-}
-</script>
-
 <template>
 	<div class="container">
+		<!-- Блок главной статьи -->
 		<div class="item item_1">
 			<div class="item_1-one">
 				<h3 class="item_1-title">
@@ -54,6 +25,8 @@ export default {
 				/>
 			</div>
 		</div>
+
+		<!-- Блок последних новостей -->
 		<div class="item item_2">
 			<div class="horizontal-line"></div>
 			<div class="red-rectangle"></div>
@@ -64,35 +37,118 @@ export default {
 				style="width: 300px"
 			/>
 			<p class="item_2-subtitle">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+				{{ latest_news[0]?.subtitle || 'Загрузка...' }}
 			</p>
-			<p class="asd font-bold">17 минут назад</p>
+			<p class="asd font-bold">
+				{{ latest_news[0] ? getTimeAgo(latest_news[0].updated) : 'Загрузка...' }}
+			</p>
 
-			<div v-for="n in 5">
+			<!-- Отображение последних новостей -->
+			<div v-for="item in latest_news" :key="item.id" class="news-item">
 				<div class="w-[345px] h-[0px] border border-[#aaaaaa] mb-2 mt-2"></div>
-				<p class="item_2-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+				<p class="item_2-list">{{ item.title }}</p>
 			</div>
 		</div>
+
+		<!-- Блок похожих статей -->
 		<div class="item item_3">
-			<img src="../../assets/1.png" alt="" class="mb-4" />
-			<p class="dsa">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-			</p>
+			<div class="item-block">
+				<img :src="`../../assets/${1}.png`" alt="" class="mb-4" />
+				<p class="dsa">{{ same_as_article[0]?.subtitle || 'Загрузка...' }}</p>
+			</div>
 		</div>
+
 		<div class="item item_4">
-			<img src="../../assets/2.png" alt="" class="mb-4" />
-			<p class="dsa">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-			</p>
+			<div class="item-block">
+				<img :src="`../../assets/${2}.png`" alt="" class="mb-4" />
+				<p class="dsa">{{ same_as_article[1]?.subtitle || 'Загрузка...' }}</p>
+			</div>
 		</div>
+
 		<div class="item item_5">
-			<img src="../../assets/3.png" alt="" class="mb-4" />
-			<p class="dsa">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-			</p>
+			<div class="item-block">
+				<img :src="`../../assets/${3}.png`" alt="" class="mb-4" />
+				<p class="dsa">{{ same_as_article[2]?.subtitle || 'Загрузка...' }}</p>
+			</div>
 		</div>
 	</div>
 </template>
+
+<script>
+import axios from 'axios'
+
+export default {
+	name: 'mainGrid',
+	data() {
+		return {
+			same_as_article: [],
+			main_article: {},
+			latest_news: []
+		}
+	},
+	mounted() {
+		this.fetchMainArticle()
+		this.fetchLatestNews()
+	},
+	methods: {
+		async fetchMainArticle() {
+			try {
+				const response = await axios.get('https://allrussia.info/api/data_main_page')
+				this.main_article = response.data.main_article[0]
+				this.same_as_article = response.data.same_as_main.slice(0, 3)
+				console.log('Same as article:', this.same_as_article)
+			} catch (error) {
+				console.error('Error fetching main article:', error)
+			}
+		},
+		async fetchLatestNews() {
+			try {
+				const categories = [
+					'politics',
+					'economics',
+					'science_education',
+					'culture_history',
+					'sport',
+					'tourism'
+				]
+
+				const requests = categories.map((category) =>
+					axios.get(`https://allrussia.info/api/data_news_${category}`)
+				)
+
+				const responses = await Promise.all(requests)
+				this.latest_news = responses
+					.map((res) => res.data)
+					.flat()
+					.sort((a, b) => new Date(b.updated) - new Date(a.updated)) // Сортировка по дате
+					.slice(0, 4)
+
+				console.log('Latest news:', this.latest_news)
+			} catch (error) {
+				console.error('Error fetching latest news:', error)
+			}
+		},
+		getTimeAgo(dateString) {
+			const now = new Date()
+			const date = new Date(dateString)
+			const diffInSeconds = Math.floor((now - date) / 1000)
+
+			if (diffInSeconds < 60) {
+				return `${diffInSeconds} секунд назад`
+			} else if (diffInSeconds < 3600) {
+				const minutes = Math.floor(diffInSeconds / 60)
+				return `${minutes} минут назад`
+			} else if (diffInSeconds < 86400) {
+				const hours = Math.floor(diffInSeconds / 3600)
+				return `${hours} часов назад`
+			} else {
+				const days = Math.floor(diffInSeconds / 86400)
+				return `${days} дней назад`
+			}
+		}
+	}
+}
+</script>
 
 <style scoped>
 .container {

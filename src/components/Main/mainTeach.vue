@@ -1,18 +1,32 @@
-<script setup>
-import { BASE_URL } from '@/Api'
+
+<script>
 import axios from 'axios'
-import { onMounted, ref } from 'vue'
+export default {
+	name: 'mainTeach',
+	data() {
+		return {
+			articles: [], // Храним все статьи в одном массиве
+			loading: true,
+			error: null,
+			apiUrlNews: 'https://allrussia.info/api/data_news_science_education'
+		}
+	},
+	async mounted() {
+		await this.fetchMainTeach()
+	},
+	methods: {
+		async fetchMainTeach() {
+			try {
+				const response = await axios.get(this.apiUrlNews)
+				this.articles = response.data // Предполагается, что это массив статей
+				this.loading = false
+			} catch (e) {
+				console.error('Error fetching articles:', e)
+				this.error = 'Failed to load data'
+				this.loading = false
+			}
+		}
 
-const mainArticle = ref([])
-const sameAsArticle = ref([])
-
-const fetchMainTeach = async () => {
-	try {
-		const response = await axios.get(`${BASE_URL}/data_main_page`)
-		mainArticle.value = response.data.main_article
-		sameAsArticle.value = response.data.same_as_article
-	} catch (error) {
-		console.error('Ошибка при получении данных:', error)
 	}
 }
 
@@ -24,15 +38,21 @@ onMounted(fetchMainTeach)
 		<div class="horizontal-line"></div>
 		<div class="red-rectangle"></div>
 		<h3>НАУКА И ОБРАЗОВАНИЕ</h3>
-		<div class="container">
-			<div v-if="mainArticle.length" class="item item_1">
-				<img class="item_1-img" :src="mainArticle[0]?.img" alt="" />
-				<h3 class="title">{{ mainArticle[0]?.title }}</h3>
-				<p>{{ mainArticle[0]?.description }}</p>
-			</div>
-			<div v-for="(item, index) in sameAsArticle" :key="index" :class="`item item_${index + 2}`">
-				<img :src="item.img" alt="" />
-				<p class="title">{{ item.title }}</p>
+
+
+		<!-- Сообщение о загрузке -->
+		<div v-if="loading">Загрузка...</div>
+		<!-- Сообщение об ошибке -->
+		<div v-if="error">{{ error }}</div>
+
+		<!-- Отображение статей -->
+		<div v-if="!loading && !error" class="container">
+			<div v-for="article in articles" :key="article.id" class="item">
+				<img :src="article.url" alt="Article image" />
+				<h3 class="title">{{ article.title }}</h3>
+				<p>{{ article.subtitle }}</p>
+				<p>{{ article.updated }}</p>
+
 			</div>
 		</div>
 	</div>

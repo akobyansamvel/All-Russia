@@ -51,7 +51,7 @@ export default defineComponent({
 }
 
 .contact {
-	//border-top: 1px solid #aaaaaa;
+	border-top: 1px solid #aaaaaa;
 }
 
 .red-line {

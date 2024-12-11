@@ -14,11 +14,14 @@ export default {
 	methods: {
 		async fetchEconomicData() {
 			try {
-				const response = await axios.get('http://localhost:5000/data_news_economics')
+				const response = await axios.get('https://allrussia.info/api/data_news_economics')
 				this.items = response.data
 			} catch (error) {
 				console.error('Ошибка при загрузке данных по экономике:', error)
 			}
+		},
+		getImageUrl(url) {
+			return url || 'default-image-path.jpg' // Укажите путь по умолчанию
 		}
 	}
 }
@@ -36,7 +39,7 @@ export default {
 					<p class="item_1-txt">{{ item.title }}</p>
 					<p>{{ item.subtitle }}</p>
 				</div>
-				<img :src="`../../assets/${item.url}`" :alt="item.title" />
+				<img :src="getImageUrl(item.url)" :alt="item.title" />
 			</div>
 		</div>
 	</div>

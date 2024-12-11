@@ -31,13 +31,14 @@
 					</div>
 					<div class="vertical__line"></div>
 					<div class="language-select">
-						<!-- <img src="@/assets/icons/globelogo.svg" alt="Language" /> -->
+						<img src="../../assets/globus.svg" alt="Language" />
 						<select v-model="selectedLanguage" @change="handleLanguageChange">
 							<option v-for="item in LanguageItems" :key="item.id" :value="item.title">
 								{{ item.title }}
 							</option>
 						</select>
 					</div>
+					<ToogleTheme />
 				</div>
 			</div>
 		</div>
@@ -52,6 +53,7 @@
 </template>
 
 <script setup>
+import ToogleTheme from '../Ui/ToogleTheme.vue'
 import HeaderHelp from '@/components/layouts/headerHelp.vue'
 import SideBar from '@/components/layouts/sideBar.vue'
 import UiDropDown from '@/components/Ui/UiDropDown.vue'
@@ -79,14 +81,14 @@ const navMenuItems = [
 		id: 2,
 		title: 'РФ',
 		options: [
-			{ label: 'ДАЛЬНЕВОСТОЧНЫЙ', link: '/regions/far-east' },
-			{ label: 'ПРИВОЛЖСКИЙ', link: '/regions/volga' },
-			{ label: 'ЦЕНТРАЛЬНЫЙ', link: '/regions/central' },
-			{ label: 'СЕВЕРО-ЗАПАДНЫЙ', link: '/regions/northwest' },
-			{ label: 'УРАЛЬСКИЙ', link: '/regions/ural' },
-			{ label: 'СИБИРСКИЙ', link: '/regions/siberia' },
-			{ label: 'СЕВЕРО-КАВКАЗСКИЙ', link: '/regions/caucasus' },
-			{ label: 'ЮЖНЫЙ', link: '/regions/south' }
+			{ label: 'ДАЛЬНЕВОСТОЧНЫЙ', link: '/Far-east' },
+			{ label: 'ПРИВОЛЖСКИЙ', link: '/Volga' },
+			{ label: 'ЦЕНТРАЛЬНЫЙ', link: '/CenterFO' },
+			{ label: 'СЕВЕРО-ЗАПАДНЫЙ', link: '/NorthWest' },
+			{ label: 'УРАЛЬСКИЙ', link: '/Ural' },
+			{ label: 'СИБИРСКИЙ', link: '/Siberia' },
+			{ label: 'СЕВЕРО-КАВКАЗСКИЙ', link: '/Caucasus' },
+			{ label: 'ЮЖНЫЙ', link: '/South' }
 		]
 	},
 	{
@@ -106,7 +108,7 @@ const navMenuItems = [
 		]
 	},
 	{
-		id: 4,
+		id: 5,
 		title: 'ШКОЛА РУССКОГО ЯЗЫКА РКИ+'
 	}
 ]

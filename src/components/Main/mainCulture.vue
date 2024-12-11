@@ -1,37 +1,35 @@
-<script setup>
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
 
-const cultureHistoryItems = ref([
-	{
-		id: 1,
-		title: 'Item 1',
-		img: new URL('@/assets/12%20(1).png', import.meta.url).href,
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+<script>
+import axios from 'axios'
+
+export default {
+	name: 'mainCulture',
+	data() {
+		return {
+			articles: [], // Храним статьи из API
+			loading: true,
+			error: null,
+			apiUrlNews: 'https://allrussia.info/api/data_news_culture_history'
+		}
 	},
-	{
-		id: 2,
-		title: 'Item 2',
-		img: new URL('@/assets/12%20(2).png', import.meta.url).href,
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	async mounted() {
+		await this.fetchMainCulture()
 	},
-	{
-		id: 3,
-		title: 'Item 3',
-		img: new URL('@/assets/12%20(3).png', import.meta.url).href,
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
-	},
-	{
-		id: 4,
-		title: 'Item 4',
-		img: new URL('@/assets/12%20(4).png', import.meta.url).href,
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.'
+	methods: {
+		async fetchMainCulture() {
+			try {
+				const response = await axios.get(this.apiUrlNews)
+				this.articles = response.data // Предполагается, что это массив статей
+				this.loading = false
+			} catch (e) {
+				console.error('Error fetching articles:', e)
+				this.error = 'Failed to load data'
+				this.loading = false
+			}
+		}
 	}
-])
+}
+
 </script>
 
 <template>
@@ -40,12 +38,21 @@ const cultureHistoryItems = ref([
 			<div class="horizontal-line"></div>
 			<div class="red-rectangle"></div>
 			<h3>КУЛЬТУРА И ИСТОРИЯ</h3>
-			<div class="container">
-				<div v-for="item in cultureHistoryItems" :key="item.id" class="item">
-					<RouterLink to="/politic">
-						<img :src="item.img" :alt="item.title" />
-					</RouterLink>
-					<p>{{ item.description }}</p>
+
+
+			<!-- Сообщение о загрузке -->
+			<div v-if="loading">Загрузка...</div>
+			<!-- Сообщение об ошибке -->
+			<div v-if="error">{{ error }}</div>
+
+			<!-- Отображение статей -->
+			<div v-if="!loading && !error" class="container">
+				<div v-for="article in articles" :key="article.id" class="item">
+					<img :src="article.url" alt="Article image" />
+					<h3 class="title">{{ article.title }}</h3>
+					<p>{{ article.subtitle }}</p>
+					<p>{{ article.updated }}</p>
+
 				</div>
 			</div>
 		</div>

@@ -1,9 +1,7 @@
 <script>
 import axios from 'axios'
-import ToogleTheme from '../Ui/ToogleTheme.vue'
 export default {
 	name: 'HeaderHelp',
-	components: { ToogleTheme },
 	data() {
 		return {
 			currencies: [
@@ -69,7 +67,6 @@ export default {
 				{{ currency.formattedChange }}
 			</span>
 		</div>
-		<ToogleTheme />
 	</div>
 </template>
 
