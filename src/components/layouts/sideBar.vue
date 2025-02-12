@@ -1,6 +1,6 @@
 <script setup>
 import { onClickOutside } from '@vueuse/core'
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import UILogosList from '@/components/Ui/UILogosList.vue'
 
 const emit = defineEmits('onClose')

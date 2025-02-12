@@ -1,37 +1,36 @@
 
 <script>
 import axios from 'axios'
+
 export default {
-	name: 'mainTeach',
-	data() {
-		return {
-			articles: [], // Храним все статьи в одном массиве
-			loading: true,
-			error: null,
-			apiUrlNews: 'https://allrussia.info/api/data_news_science_education'
-		}
-	},
-	async mounted() {
-		await this.fetchMainTeach()
-	},
-	methods: {
-		async fetchMainTeach() {
-			try {
-				const response = await axios.get(this.apiUrlNews)
-				this.articles = response.data // Предполагается, что это массив статей
-				this.loading = false
-			} catch (e) {
-				console.error('Error fetching articles:', e)
-				this.error = 'Failed to load data'
-				this.loading = false
-			}
-		}
-
-	}
+  name: 'mainTeach',
+  data() {
+    return {
+      articles: [], // Храним все статьи в одном массиве
+      loading: true,
+      error: null,
+      apiUrlNews: 'https://allrussia.info/api/data_news_science_education'
+    }
+  },
+  async mounted() {
+    await this.fetchMainTeach()
+  },
+  methods: {
+    async fetchMainTeach() {
+      try {
+        const response = await axios.get(this.apiUrlNews)
+        this.articles = response.data // Предполагается, что это массив статей
+      } catch (e) {
+        console.error('Error fetching articles:', e)
+        this.error = 'Не удалось загрузить данные'
+      } finally {
+        this.loading = false
+      }
+    }
+  }
 }
-
-onMounted(fetchMainTeach)
 </script>
+
 
 <template>
 	<div class="wrapper">
