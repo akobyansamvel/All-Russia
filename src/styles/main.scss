@@ -117,11 +117,18 @@ $light-theme: (
 }
 
 /* Общий стиль */
-// body {
-// 	background-color: var(--page-bg);
-// 	color: var(--text-color);
-// 	box-shadow: var(--box-shadow);
-// }
+body {
+	background-color: var(--page-bg);
+	color: var(--text-color);
+	box-shadow: var(--box-shadow);
+}
+
+/* Плавный переход для всех элементов */
+.theme-transition {
+	transition:
+		background-color 0.5s ease,
+		color 0.5s ease;
+}
 
 /* Стили текста */
 .container,
