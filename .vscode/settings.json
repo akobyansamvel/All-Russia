@@ -1,10 +1,9 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit",
-		"source.organizeImports": "explicit"
-	},
-	"editor.formatOnSave": true,
-	"editor.tabSize": 2,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"liveServer.settings.wait": 1
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 }

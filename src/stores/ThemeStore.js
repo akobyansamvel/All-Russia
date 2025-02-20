@@ -15,8 +15,5 @@ export const useThemeStore = defineStore('theme', {
 			const newTheme = this.theme === 'dark' ? 'light' : 'dark'
 			this.setTheme(newTheme)
 		}
-	},
-	init() {
-		this.setTheme(this.theme)
 	}
 })
