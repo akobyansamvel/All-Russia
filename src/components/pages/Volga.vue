@@ -27,7 +27,11 @@
 					<p class="bottom__text text-heading">Регионы Приволжского федерального округа</p>
 					<div class="container__card">
 						<div class="item item-1">
-							<img src="../../assets/ulyanovsk_flag.png" alt="Ульяновская область" />
+							<img
+								class="card__img"
+								src="../../assets/ulyanovsk_flag.png"
+								alt="Ульяновская область"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Ульяновская область</p>
 								<p class="card__text text-population">Население: 1 290 000 чел.</p>
@@ -36,7 +40,7 @@
 							</div>
 						</div>
 						<div class="item item-2">
-							<img src="../../assets/samara_flag.png" alt="Самарская область" />
+							<img class="card__img" src="../../assets/samara_flag.png" alt="Самарская область" />
 							<div class="item__card">
 								<p class="card__heading">Самарская область</p>
 								<p class="card__text text-population">Население: 3 200 000 чел.</p>
@@ -45,7 +49,7 @@
 							</div>
 						</div>
 						<div class="item item-3">
-							<img src="../../assets/kazan_flag.png" alt="Татарстан" />
+							<img class="card__img" src="../../assets/kazan_flag.png" alt="Татарстан" />
 							<div class="item__card">
 								<p class="card__heading">Татарстан</p>
 								<p class="card__text text-population">Население: 3 850 000 чел.</p>
@@ -54,7 +58,7 @@
 							</div>
 						</div>
 						<div class="item item-4">
-							<img src="../../assets/penza_flag.png" alt="Пензенская область" />
+							<img class="card__img" src="../../assets/penza_flag.png" alt="Пензенская область" />
 							<div class="item__card">
 								<p class="card__heading">Пензенская область</p>
 								<p class="card__text text-population">Население: 1 360 000 чел.</p>
@@ -63,7 +67,11 @@
 							</div>
 						</div>
 						<div class="item item-5">
-							<img src="../../assets/volgograd_flag.png" alt="Волгоградская область" />
+							<img
+								class="card__img"
+								src="../../assets/volgograd_flag.png"
+								alt="Волгоградская область"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Волгоградская область</p>
 								<p class="card__text text-population">Население: 2 520 000 чел.</p>
@@ -72,7 +80,11 @@
 							</div>
 						</div>
 						<div class="item item-6">
-							<img src="../../assets/astrakhan_flag.png" alt="Астраханская область" />
+							<img
+								class="card__img"
+								src="../../assets/astrakhan_flag.png"
+								alt="Астраханская область"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Астраханская область</p>
 								<p class="card__text text-population">Население: 1 010 000 чел.</p>
@@ -81,7 +93,11 @@
 							</div>
 						</div>
 						<div class="item item-7">
-							<img src="../../assets/orenburg_flag.png" alt="Оренбургская область" />
+							<img
+								class="card__img"
+								src="../../assets/orenburg_flag.png"
+								alt="Оренбургская область"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Оренбургская область</p>
 								<p class="card__text text-population">Население: 2 160 000 чел.</p>
@@ -90,7 +106,11 @@
 							</div>
 						</div>
 						<div class="item item-8">
-							<img src="../../assets/mari_el_flag.png" alt="Республика Марий Эл" />
+							<img
+								class="card__img"
+								src="../../assets/mari_el_flag.png"
+								alt="Республика Марий Эл"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Республика Марий Эл</p>
 								<p class="card__text text-population">Население: 700 000 чел.</p>
@@ -99,7 +119,11 @@
 							</div>
 						</div>
 						<div class="item item-9">
-							<img src="../../assets/mordovia_flag.png" alt="Республика Мордовия" />
+							<img
+								class="card__img"
+								src="../../assets/mordovia_flag.png"
+								alt="Республика Мордовия"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Республика Мордовия</p>
 								<p class="card__text text-population">Население: 805 000 чел.</p>
@@ -108,7 +132,11 @@
 							</div>
 						</div>
 						<div class="item item-10">
-							<img src="../../assets/udmurtia_flag.png" alt="Удмуртская Республика" />
+							<img
+								class="card__img"
+								src="../../assets/udmurtia_flag.png"
+								alt="Удмуртская Республика"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Удмуртская Республика</p>
 								<p class="card__text text-population">Население: 1 520 000 чел.</p>
@@ -117,7 +145,7 @@
 							</div>
 						</div>
 						<div class="item item-11">
-							<img src="../../assets/kirov_flag.png" alt="Кировская область" />
+							<img class="card__img" src="../../assets/kirov_flag.png" alt="Кировская область" />
 							<div class="item__card">
 								<p class="card__heading">Кировская область</p>
 								<p class="card__text text-population">Население: 1 280 000 чел.</p>
@@ -126,7 +154,11 @@
 							</div>
 						</div>
 						<div class="item item-12">
-							<img src="../../assets/cheboksary_flag.png" alt="Чувашская Республика" />
+							<img
+								class="card__img"
+								src="../../assets/cheboksary_flag.png"
+								alt="Чувашская Республика"
+							/>
 							<div class="item__card">
 								<p class="card__heading">Чувашская Республика</p>
 								<p class="card__text text-population">Население: 1 200 000 чел.</p>
@@ -151,13 +183,12 @@ export default {
 .container__card {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(5, 225px);
 	grid-column-gap: 90px;
 	grid-row-gap: 60px;
 }
 .item {
 	display: flex;
-	justify-content: space-between;
+	gap: 25px;
 }
 
 .main {
@@ -174,7 +205,6 @@ p {
 	margin: 0 auto;
 }
 
-/* banner */
 .banner {
 	background-image: url('@/assets/shapka.png');
 	background-repeat: no-repeat;
@@ -185,13 +215,12 @@ p {
 	align-items: center;
 }
 
-.banner__headding {
+.banner__heading {
 	font-size: 80px;
 	font-weight: bold;
 	color: #ffffff;
 }
 
-/* list */
 .list {
 	margin-top: 10px;
 }
@@ -207,25 +236,11 @@ p {
 	background-color: #aa0000;
 }
 
-.text-headdind {
-	margin-bottom: 30px;
-	margin-top: 24px;
-	font-size: 24px;
-	text-transform: uppercase;
-}
-
 .list__bottom {
 	border-top: 1px solid #aaaaaa;
 	margin-top: 80px;
 }
 
-.bottom__list-cards {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-/* card */
 .card {
 	display: flex;
 	margin-top: 32px;
@@ -238,7 +253,12 @@ p {
 	justify-content: space-between;
 }
 
-.card__headding {
+.card__img {
+	height: 231px;
+	width: auto;
+}
+
+.card__heading {
 	margin-bottom: 57px;
 	font-size: 36px;
 }
@@ -246,31 +266,39 @@ p {
 .card__text {
 	line-height: 2;
 	font-size: 20px;
+	white-space: nowrap;
 }
 
 .bottom {
 	margin-bottom: 80px;
 }
-/* //////////////////// */
-
-/* media request */
 
 @media screen and (width < 1400px) {
-	.bottom__list-cards {
-		justify-content: center;
+	.container__card {
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.top__card {
 		justify-content: center;
 	}
 
-	.banner__headding {
-		font-size: 60px;
+	.item {
+		flex-direction: column;
+	}
+
+	.card__heading {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (width < 1200px) {
+	.container__card {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
 @media screen and (width < 1000px) {
-	.banner__headding {
+	.banner__heading {
 		font-size: 45px;
 	}
 }
@@ -285,14 +313,12 @@ p {
 		display: flex;
 		flex-direction: column;
 	}
-	.item {
-		flex-direction: column;
-	}
 	.card {
 		flex-direction: column;
 	}
-	.card__headding {
-		margin-bottom: 0;
+	.card__img {
+		width: 100%;
+		height: 338px;
 	}
 }
 </style>
