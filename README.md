@@ -59,9 +59,13 @@ git config --global user.email "ваш.email@example.com"
 
 
 Если вы хотите обновить свою ветку с учетом изменений из main
-
-git fetch origin  // Скачать последнее изменение      
-git merge origin/main  //  Объединить изменения из main в вашу ветку
-
+Скачать последнее изменение 
+```
+git fetch origin
+```
+Объединить изменения из main в вашу ветку
+```     
+git merge origin/main 
+```
 
 
