@@ -13,12 +13,15 @@ import Home from './components/pages/HomePage.vue'
 import PartnerPage from './components/pages/PartnerPage.vue'
 
 import CaucasusFederalDistrict from './components/pages/Caucasus.vue'
+import CentralAsia from './components/pages/CentralAsia.vue'
+import EastEurope from './components/pages/EastEurope.vue'
 import NorthWest from './components/pages/NorthWest.vue'
 import SiberianFederalDistrict from './components/pages/Siberis.vue'
 import SouthernFederalDistrict from './components/pages/South.vue'
-import VolgaFederalDistrict from './components/pages/Volga.vue'
 import UralFederalDistrict from './components/pages/Ural.vue'
-
+import VolgaFederalDistrict from './components/pages/Volga.vue'
+import MiddleEast from './components/pages/MiddleEast.vue'
+import NorthAfrica from './components/pages/NorthAfrica.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -104,6 +107,31 @@ const router = createRouter({
 			path: '/Volga',
 			name: 'VolgaFederalDistrict',
 			component: VolgaFederalDistrict
+		},
+		{
+			path: '/EastEurope',
+			name: 'EastEurope',
+			component: EastEurope
+		},
+		{
+			path: '/CentralAsia',
+			name: 'CentralAsia',
+			component: CentralAsia
+		},
+		{
+			path: '/Volga',
+			name: 'VolgaFederalDistrict',
+			component: VolgaFederalDistrict
+		},
+		{
+			path: '/MiddleEast',
+			name: 'MiddleEast',
+			component: MiddleEast
+		},
+		{
+			path: '/NorthAfrica',
+			name: 'NorthAfrica',
+			component: NorthAfrica
 		}
 	]
 })

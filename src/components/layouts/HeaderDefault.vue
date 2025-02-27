@@ -53,10 +53,10 @@
 </template>
 
 <script setup>
-import ToogleTheme from '../Ui/ToogleTheme.vue'
 import HeaderHelp from '@/components/layouts/headerHelp.vue'
 import SideBar from '@/components/layouts/sideBar.vue'
 import UiDropDown from '@/components/Ui/UiDropDown.vue'
+import ToogleTheme from '../Ui/ToogleTheme.vue'
 
 import { ref } from 'vue'
 
@@ -95,16 +95,16 @@ const navMenuItems = [
 		id: 3,
 		title: 'СНГ',
 		options: [
-			{ label: 'ВОСТОЧНАЯ ЕВРОПА', link: '/lorem' },
-			{ label: 'СРЕДНЯЯ АЗИЯ', link: '/lorem' }
+			{ label: 'ВОСТОЧНАЯ ЕВРОПА', link: '/EastEurope' },
+			{ label: 'СРЕДНЯЯ АЗИЯ', link: '/CentralAsia' }
 		]
 	},
 	{
 		id: 4,
 		title: 'АРАБСКИЙ МИР',
 		options: [
-			{ label: 'СЕВЕРНАЯ АФРИКА', link: '/lorem' },
-			{ label: 'БЛИЖНИЙ ВОСТОК', link: '/lorem' }
+			{ label: 'СЕВЕРНАЯ АФРИКА', link: '/NorthAfrica' },
+			{ label: 'БЛИЖНИЙ ВОСТОК', link: '/MiddleEast' }
 		]
 	},
 	{

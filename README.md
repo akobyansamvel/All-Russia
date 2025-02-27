@@ -37,7 +37,21 @@ npm run dev
 
 ```
 git pull
+git add . // Добавьте файлы, которые хотите загрузить на GitHub
+git commit -m "Ваше сообщение коммита" // Создайте коммит с описанием изменений
+git push -u origin main // Загрузите изменения
+
+ЕСЛИ
+Если вы впервые используете Git, возможно, потребуется настроить имя пользователя и email:
+git config --global user.name "Ваше Имя"
+git config --global user.email "ваш.email@example.com"
 ```
+
+
+Если вы хотите обновить свою ветку с учетом изменений из main
+
+git fetch origin  // Скачать последнее изменение      
+git merge origin/main  //  Объединить изменения из main в вашу ветку
 
 
 
