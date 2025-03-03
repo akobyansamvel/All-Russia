@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img class="card__img" src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Амурский</p>
 								<p class="card__text text-population">Население: 785 тыс. чел.</p>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="item item_2">
-							<img class="card__img" src="@/assets/tula_flag%201.png" alt="" />
+							<img src="@/assets/tula_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Еврейский</p>
 								<p class="card__text text-population">Население: 151 тыс. чел.</p>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="item item_3">
-							<img class="card__img" src="@/assets/tambov_flag%201.png" alt="" />
+							<img src="@/assets/tambov_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Камчатский</p>
 								<p class="card__text text-population">Население: 308 тыс. чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img class="card__img" src="@/assets/lipetsk_flag%201.png" alt="" />
+							<img src="@/assets/lipetsk_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Магаданский</p>
 								<p class="card__text text-population">Население: 141 тыс. чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img class="card__img" src="@/assets/voronezh_flag%201.png" alt="" />
+							<img src="@/assets/voronezh_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Приморский</p>
 								<p class="card__text text-population">Население: 1 856 000 чел</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img class="card__img" src="@/assets/belgorod_flag%201.png" alt="" />
+							<img src="@/assets/belgorod_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Бурятия</p>
 								<p class="card__text text-population">Население: 970 тыс. чел.</p>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="item item_7">
-							<img class="card__img" src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Якутия</p>
 								<p class="card__text text-population">Население: 949 тыс. чел.</p>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="item item_8">
-							<img class="card__img" src="@/assets/vladimir_flag_337%201.png" alt="" />
+							<img src="@/assets/vladimir_flag_337%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Сахалинский</p>
 								<p class="card__text text-population">Население: 464 тыс. чел.</p>
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="item item_9">
-							<img class="card__img" src="@/assets/ivanon_flag%201.png" alt="" />
+							<img src="@/assets/ivanon_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Забайкальский</p>
 								<p class="card__text text-population">Население: 1 060 000 чел</p>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="item item_10">
-							<img class="card__img" src="@/assets/smolensk_flag%201.png" alt="" />
+							<img src="@/assets/smolensk_flag%201.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Хабаровский</p>
 								<p class="card__text text-population">Население: 1 295 000 чел</p>
@@ -129,12 +129,13 @@ export default {
 .container__card {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(5, 225px);
 	grid-column-gap: 90px;
 	grid-row-gap: 60px;
 }
 .item {
 	display: flex;
-	gap: 25px;
+	justify-content: space-between;
 }
 
 .main {
@@ -151,6 +152,7 @@ p {
 	margin: 0 auto;
 }
 
+/* banner */
 .banner {
 	background-image: url('@/assets/shapka.png');
 	background-repeat: no-repeat;
@@ -167,6 +169,7 @@ p {
 	color: #ffffff;
 }
 
+/* list */
 .list {
 	margin-top: 10px;
 }
@@ -194,6 +197,13 @@ p {
 	margin-top: 80px;
 }
 
+.bottom__list-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* card */
 .card {
 	display: flex;
 	margin-top: 32px;
@@ -206,11 +216,6 @@ p {
 	justify-content: space-between;
 }
 
-.card__img {
-	height: 231px;
-	width: auto;
-}
-
 .card__headding {
 	margin-bottom: 57px;
 	font-size: 36px;
@@ -219,16 +224,18 @@ p {
 .card__text {
 	line-height: 2;
 	font-size: 20px;
-	white-space: nowrap;
 }
 
 .bottom {
 	margin-bottom: 80px;
 }
+/* //////////////////// */
+
+/* media request */
 
 @media screen and (width < 1400px) {
-	.container__card {
-		grid-template-columns: repeat(3, 1fr);
+	.bottom__list-cards {
+		justify-content: center;
 	}
 
 	.top__card {
@@ -237,20 +244,6 @@ p {
 
 	.banner__headding {
 		font-size: 60px;
-	}
-
-	.item {
-		flex-direction: column;
-	}
-
-	.card__headding {
-		margin-bottom: 0;
-	}
-}
-
-@media screen and (width < 1200px) {
-	.container__card {
-		grid-template-columns: 1fr 1fr;
 	}
 }
 
@@ -261,11 +254,6 @@ p {
 }
 
 @media screen and (width < 769px) {
-	.card__img {
-		width: 100%;
-		height: 338px;
-	}
-
 	.main {
 		padding: 10px;
 	}
@@ -275,9 +263,14 @@ p {
 		display: flex;
 		flex-direction: column;
 	}
-
+	.item {
+		flex-direction: column;
+	}
 	.card {
 		flex-direction: column;
+	}
+	.card__headding {
+		margin-bottom: 0;
 	}
 }
 </style>
