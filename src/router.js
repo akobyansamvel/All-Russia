@@ -16,9 +16,10 @@ import CaucasusFederalDistrict from './components/pages/Caucasus.vue'
 import NorthWest from './components/pages/NorthWest.vue'
 import SiberianFederalDistrict from './components/pages/Siberis.vue'
 import SouthernFederalDistrict from './components/pages/South.vue'
-import VolgaFederalDistrict from './components/pages/Volga.vue'
 import UralFederalDistrict from './components/pages/Ural.vue'
+import VolgaFederalDistrict from './components/pages/Volga.vue'
 
+import eastern_europeVue from './components/SNG/eastern_europe.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -104,7 +105,13 @@ const router = createRouter({
 			path: '/Volga',
 			name: 'VolgaFederalDistrict',
 			component: VolgaFederalDistrict
-		}
+		},
+		{
+			path: '/eastern-europe',
+			name: 'EasternEurope',
+			component: eastern_europeVue
+	  }
+	
 	]
 })
 
