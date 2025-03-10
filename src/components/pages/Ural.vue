@@ -9,7 +9,7 @@
 					<span class="top__line-red line-red"></span>
 					<p class="top__text text-headdind">ЦЕНТР УРАЛА</p>
 					<div class="top__card card">
-						<img class="card__img" src="../../assets/ekaterinburg_flag.png" alt="" />
+						<img class="card__img" src="../../assets/Yekaterinburg.png" alt="" />
 						<div class="card__box">
 							<p class="card__headding">Екатеринбург</p>
 							<p class="card__text text-population">Население: 1 500 000 чел.</p>
@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img src="../../assets/kurgan_flag.png" alt="" />
+							<img src="../../assets/Kurgan_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Курганская область</p>
 								<p class="card__text text-population">Население: 829 000 чел.</p>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="item item_2">
-							<img src="../../assets/sverdlovsk_flag.png" alt="" />
+							<img src="../../assets/Sverdlovsk_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Свердловская область</p>
 								<p class="card__text text-population">Население: 4 316 000 чел.</p>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="item item_3">
-							<img src="../../assets/tyumen_flag.png" alt="" />
+							<img src="../../assets/Tyumen_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Тюменская область</p>
 								<p class="card__text text-population">Население: 3 753 000 чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img src="../../assets/khanty_flag.png" alt="" />
+							<img src="../../assets/Hanti-Mansi.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ханты-Мансийский АО</p>
 								<p class="card__text text-population">Население: 1 674 000 чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img src="../../assets/yamalo_flag.png" alt="" />
+							<img src="../../assets/Yamal-Nenets_Autonomous_District.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ямало-Ненецкий АО</p>
 								<p class="card__text text-population">Население: 547 000 чел.</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img src="../../assets/chelyabinsk_flag.png" alt="" />
+							<img src="../../assets/Chelyabinsk_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Челябинская область</p>
 								<p class="card__text text-population">Население: 3 485 000 чел.</p>

@@ -9,7 +9,7 @@
 					<span class="top__line-red line-red"></span>
 					<p class="top__text text-headdind">ЦЕНТР ЮГА</p>
 					<div class="top__card card">
-						<img class="card__img" src="../../assets/rostov_flag.png" alt="" />
+						<img class="card__img" src="../../assets/Rostov_Oblast.png" alt="" />
 						<div class="card__box">
 							<p class="card__headding">Ростов-на-Дону</p>
 							<p class="card__text text-population">Население: 1 125 000 чел.</p>
@@ -23,7 +23,7 @@
 					<p class="bottom__text text-headdind">Регионы</p>
 					<div class="container__card">
 						<div class="item item_1">
-							<img src="../../assets/astrakhan_flag.png" alt="" />
+							<img src="../../assets/Astrakhan_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Астраханская область</p>
 								<p class="card__text text-population">Население: 999 000 чел.</p>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="item item_2">
-							<img src="../../assets/volgograd_flag.png" alt="" />
+							<img src="../../assets/Volgograd_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Волгоградская область</p>
 								<p class="card__text text-population">Население: 2 473 000 чел.</p>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="item item_3">
-							<img src="../../assets/krasnodar_flag.png" alt="" />
+							<img src="../../assets/Krasnodar_Krai.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Краснодарский край</p>
 								<p class="card__text text-population">Население: 5 679 000 чел.</p>
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="item item_4">
-							<img src="../../assets/rostov_flag.png" alt="" />
+							<img src="../../assets/Rostov_Oblast.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Ростовская область</p>
 								<p class="card__text text-population">Население: 4 202 000 чел.</p>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="item item_5">
-							<img src="../../assets/adigea_flag.png" alt="" />
+							<img src="../../assets/Adygea.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Республика Адыгея</p>
 								<p class="card__text text-population">Население: 464 000 чел.</p>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="item item_6">
-							<img src="../../assets/kalmykia_flag.png" alt="" />
+							<img src="../../assets/Kalmykia.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Республика Калмыкия</p>
 								<p class="card__text text-population">Население: 270 000 чел.</p>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="item item_7">
-							<img src="../../assets/crimea_flag.png" alt="" />
+							<img src="../../assets/Crimea.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">Республика Крым</p>
 								<p class="card__text text-population">Население: 1 911 000 чел.</p>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="item item_8">
-							<img src="../../assets/sevastopol_flag.png" alt="" />
+							<img src="../../assets/Sevastopol.png" alt="" />
 							<div class="item__card">
 								<p class="card__headding">г. Севастополь</p>
 								<p class="card__text text-population">Население: 512 000 чел.</p>

@@ -11,7 +11,7 @@
 					<div class="top__card card">
 						<img
 							class="card__img"
-							src="../../assets/nizhny_novgorod_flag.png"
+							src="../../assets/Nizhny_Novgorod.png"
 							alt="Нижний Новгород"
 						/>
 						<div class="card__box">
@@ -27,7 +27,7 @@
 					<p class="bottom__text text-heading">Регионы Приволжского федерального округа</p>
 					<div class="container__card">
 						<div class="item item-1">
-							<img src="../../assets/ulyanovsk_flag.png" alt="Ульяновская область" />
+							<img src="../../assets/Ulyanovsk_Oblast.png" alt="Ульяновская область" />
 							<div class="item__card">
 								<p class="card__heading">Ульяновская область</p>
 								<p class="card__text text-population">Население: 1 290 000 чел.</p>
@@ -36,7 +36,7 @@
 							</div>
 						</div>
 						<div class="item item-2">
-							<img src="../../assets/samara_flag.png" alt="Самарская область" />
+							<img src="../../assets/Samara_Oblast.png" alt="Самарская область" />
 							<div class="item__card">
 								<p class="card__heading">Самарская область</p>
 								<p class="card__text text-population">Население: 3 200 000 чел.</p>
@@ -45,7 +45,7 @@
 							</div>
 						</div>
 						<div class="item item-3">
-							<img src="../../assets/kazan_flag.png" alt="Татарстан" />
+							<img src="../../assets/Tatarstan.png" alt="Татарстан" />
 							<div class="item__card">
 								<p class="card__heading">Татарстан</p>
 								<p class="card__text text-population">Население: 3 850 000 чел.</p>
@@ -54,7 +54,7 @@
 							</div>
 						</div>
 						<div class="item item-4">
-							<img src="../../assets/penza_flag.png" alt="Пензенская область" />
+							<img src="../../assets/Penza_Oblast.png" alt="Пензенская область" />
 							<div class="item__card">
 								<p class="card__heading">Пензенская область</p>
 								<p class="card__text text-population">Население: 1 360 000 чел.</p>
@@ -63,7 +63,7 @@
 							</div>
 						</div>
 						<div class="item item-5">
-							<img src="../../assets/volgograd_flag.png" alt="Волгоградская область" />
+							<img src="../../assets/Volgograd_Oblast.png" alt="Волгоградская область" />
 							<div class="item__card">
 								<p class="card__heading">Волгоградская область</p>
 								<p class="card__text text-population">Население: 2 520 000 чел.</p>
@@ -72,7 +72,7 @@
 							</div>
 						</div>
 						<div class="item item-6">
-							<img src="../../assets/astrakhan_flag.png" alt="Астраханская область" />
+							<img src="../../assets/Astrakhan_Oblast.png" alt="Астраханская область" />
 							<div class="item__card">
 								<p class="card__heading">Астраханская область</p>
 								<p class="card__text text-population">Население: 1 010 000 чел.</p>
@@ -81,7 +81,7 @@
 							</div>
 						</div>
 						<div class="item item-7">
-							<img src="../../assets/orenburg_flag.png" alt="Оренбургская область" />
+							<img src="../../assets/Orenburg_Oblast.png" alt="Оренбургская область" />
 							<div class="item__card">
 								<p class="card__heading">Оренбургская область</p>
 								<p class="card__text text-population">Население: 2 160 000 чел.</p>
@@ -90,7 +90,7 @@
 							</div>
 						</div>
 						<div class="item item-8">
-							<img src="../../assets/mari_el_flag.png" alt="Республика Марий Эл" />
+							<img src="../../assets/Mari_El.png" alt="Республика Марий Эл" />
 							<div class="item__card">
 								<p class="card__heading">Республика Марий Эл</p>
 								<p class="card__text text-population">Население: 700 000 чел.</p>
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 						<div class="item item-9">
-							<img src="../../assets/mordovia_flag.png" alt="Республика Мордовия" />
+							<img src="../../assets/Mordovia.png" alt="Республика Мордовия" />
 							<div class="item__card">
 								<p class="card__heading">Республика Мордовия</p>
 								<p class="card__text text-population">Население: 805 000 чел.</p>
@@ -108,7 +108,7 @@
 							</div>
 						</div>
 						<div class="item item-10">
-							<img src="../../assets/udmurtia_flag.png" alt="Удмуртская Республика" />
+							<img src="../../assets/Udmurtia.png" alt="Удмуртская Республика" />
 							<div class="item__card">
 								<p class="card__heading">Удмуртская Республика</p>
 								<p class="card__text text-population">Население: 1 520 000 чел.</p>
@@ -117,7 +117,7 @@
 							</div>
 						</div>
 						<div class="item item-11">
-							<img src="../../assets/kirov_flag.png" alt="Кировская область" />
+							<img src="../../assets/Kirov_Oblast.png" alt="Кировская область" />
 							<div class="item__card">
 								<p class="card__heading">Кировская область</p>
 								<p class="card__text text-population">Население: 1 280 000 чел.</p>
@@ -126,7 +126,7 @@
 							</div>
 						</div>
 						<div class="item item-12">
-							<img src="../../assets/cheboksary_flag.png" alt="Чувашская Республика" />
+							<img src="../../assets/Chuvashia.png" alt="Чувашская Республика" />
 							<div class="item__card">
 								<p class="card__heading">Чувашская Республика</p>
 								<p class="card__text text-population">Население: 1 200 000 чел.</p>
