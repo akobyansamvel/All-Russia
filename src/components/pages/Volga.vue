@@ -151,13 +151,12 @@ export default {
 .container__card {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(5, 225px);
 	grid-column-gap: 90px;
 	grid-row-gap: 60px;
 }
 .item {
 	display: flex;
-	justify-content: space-between;
+	gap: 25px;
 }
 
 .main {
@@ -174,7 +173,6 @@ p {
 	margin: 0 auto;
 }
 
-/* banner */
 .banner {
 	background-image: url('@/assets/shapka.png');
 	background-repeat: no-repeat;
@@ -185,13 +183,12 @@ p {
 	align-items: center;
 }
 
-.banner__headding {
+.banner__heading {
 	font-size: 80px;
 	font-weight: bold;
 	color: #ffffff;
 }
 
-/* list */
 .list {
 	margin-top: 10px;
 }
@@ -207,25 +204,11 @@ p {
 	background-color: #aa0000;
 }
 
-.text-headdind {
-	margin-bottom: 30px;
-	margin-top: 24px;
-	font-size: 24px;
-	text-transform: uppercase;
-}
-
 .list__bottom {
 	border-top: 1px solid #aaaaaa;
 	margin-top: 80px;
 }
 
-.bottom__list-cards {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-/* card */
 .card {
 	display: flex;
 	margin-top: 32px;
@@ -238,7 +221,12 @@ p {
 	justify-content: space-between;
 }
 
-.card__headding {
+.card__img {
+	height: 231px;
+	width: auto;
+}
+
+.card__heading {
 	margin-bottom: 57px;
 	font-size: 36px;
 }
@@ -246,31 +234,39 @@ p {
 .card__text {
 	line-height: 2;
 	font-size: 20px;
+	white-space: nowrap;
 }
 
 .bottom {
 	margin-bottom: 80px;
 }
-/* //////////////////// */
-
-/* media request */
 
 @media screen and (width < 1400px) {
-	.bottom__list-cards {
-		justify-content: center;
+	.container__card {
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.top__card {
 		justify-content: center;
 	}
 
-	.banner__headding {
-		font-size: 60px;
+	.item {
+		flex-direction: column;
+	}
+
+	.card__heading {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (width < 1200px) {
+	.container__card {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
 @media screen and (width < 1000px) {
-	.banner__headding {
+	.banner__heading {
 		font-size: 45px;
 	}
 }
@@ -285,14 +281,12 @@ p {
 		display: flex;
 		flex-direction: column;
 	}
-	.item {
-		flex-direction: column;
-	}
 	.card {
 		flex-direction: column;
 	}
-	.card__headding {
-		margin-bottom: 0;
+	.card__img {
+		width: 100%;
+		height: 338px;
 	}
 }
 </style>

@@ -10,6 +10,7 @@
 
 <script>
 import { useThemeStore } from '@/stores/ThemeStore'
+import { onMounted } from 'vue'
 
 export default {
 	name: 'ThemeToggle',
@@ -18,9 +19,24 @@ export default {
 
 		themeStore.setTheme(themeStore.theme)
 
+		onMounted(() => {
+			// При монтировании, добавляем класс только если тема уже установлена
+			document.body.classList.add('theme-transition')
+		})
+
 		return {
 			theme: themeStore.theme,
 			toggleTheme: themeStore.toggleTheme
+		}
+	},
+	watch: {
+		theme(newTheme) {
+			// Следим за изменением темы и добавляем/удаляем класс для transition
+			if (newTheme) {
+				document.body.classList.add('theme-transition')
+			} else {
+				document.body.classList.remove('theme-transition')
+			}
 		}
 	}
 }
